@@ -7,5 +7,13 @@
 <body>
 <p>W tym miejscu będzie znajdować się aplikacja webowa pozwalająca wykryć plagiat w notacji matematycznej!</p>
 <p>Stay tuned :)</p>
+<h2>Wybierz plik, który chcesz sprawdzić</h2>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="document" id="file" class="inputfile"/>
+    <label for="file">Wybierz plik</label>
+    <button type="submit">Zatwierdź</button>
+</form>
 </body>
 </html>
