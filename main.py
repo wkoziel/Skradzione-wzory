@@ -1,35 +1,55 @@
-import os
+import os, re
 
-class File:
-    def __init__(self, data):
-        """Klasa przechowuje obiekty plików tex"""
-        self._separate(data)
-        self.math = [] #Lista zawierająca odseparowane wzory
+class Files:
+    def __init__(self, data, name):
+        self.name = name
+        self.math = []
+        self._prepare_data(data)
 
-    def _separate(self, data):
-        """Funkcja oddziela tekst od wzorów i zapisuje tylko wzory"""
-        pass
+    def _prepare_data(self, data):
+        data = " ".join(data.split())
+        data = data.replace(" ", "")
+        self._separate_formulas(data)
 
+    def _separate_formulas(self, data):
+        print("Dane dla pliku: "+self.name)
+        # self.math.append(re.findall(r"\$(.+?)\$", data)) #$...$
+        # self.math.append(re.findall(r"\$\$(.+?)\$\$", data)) #$...$
+        self.math.append(re.findall(r"\\\[(.+?)\\\]", data))
+        self.math.append(re.findall(r"\\\((.+?)\\\)", data))
+        self.math.append(re.findall(r"\\begin\{displaymath\}(.+?)\\end\{displaymath\}", data))
+        self.math.append(re.findall(r"\\begin\{math\}(.+?)\\end\{math\}", data))
+        self.math.append(re.findall(r"\\begin\{equation\}(.+?)\\end\{equation\}", data))
+        self.math.append(re.findall(r"\\begin\{equation\*\}(.+?)\\end\{equation\*\}", data))
+        self.math.append(re.findall(r"\\begin\{eqnarray\}(.+?)\\end\{eqnarray\}", data))
+        self.math.append(re.findall(r"\\begin\{eqnarray\*\}(.+?)\\end\{eqnarray\*\}", data))
+        self.math.append(re.findall(r"\\begin\{align\}(.+?)\\end\{align\}", data))
+        self.math.append(re.findall(r"\\begin\{align\*\}(.+?)\\end\{align\*\}", data))
+        self.math.append(re.findall(r"\\begin\{multline\}(.+?)\\end\{multline\}", data))
+        self.math.append(re.findall(r"\\begin\{multline\*\}(.+?)\\end\{multline\*\}", data))
+        self.math.append(re.findall(r"\\begin\{gather\}(.+?)\\end\{gather\}", data))
+        self.math.append(re.findall(r"\\begin\{gather\*\}(.+?)\\end\{gather\*\}", data))
+        self.math = [x for x in self.math if x != []] #usuwa puste
+        print(self.math)
+        print(" ")
 
 class File_Reader:
+
     def __init__(self):
-        """Klasa zawierająca funkcje odpowiedzialne za odczyt plików z bazy i tworzenie dla nich
-        obiektów File -- Wersja lokalna algorytmu, będzie on do przerobienia"""
-        self.files = [] 
+        self.files = []
         self.files_names = []
         self._names_download()
         self._read_file()
 
     def _names_download(self):
-        """Pobiera nazwy plików z /database"""
         self.files_names = os.listdir('database')
 
 
     def _read_file(self):
-        """Wczytuje zawartość plików i tworzy dla nich obiekty File"""
+        print("Wczytywanie plików: "+str(self.files_names)+"\n")
         for file in self.files_names:
             f = open("database/" + file,"r")
-            self.files.append(File(f.read()))
+            self.files.append(Files(f.read(), str(file)))
 
 
 def main():
