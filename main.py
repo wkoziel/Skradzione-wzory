@@ -14,7 +14,7 @@ class Files:
     def _separate_formulas(self, data):
         print("Dane dla pliku: "+self.name)
         # self.math.append(re.findall(r"\$(.+?)\$", data)) #$...$
-        # self.math.append(re.findall(r"\$\$(.+?)\$\$", data)) #$...$
+        self.math.append(re.findall(r"\$\$(.+?)\$\$", data))
         self.math.append(re.findall(r"\\\[(.+?)\\\]", data))
         self.math.append(re.findall(r"\\\((.+?)\\\)", data))
         self.math.append(re.findall(r"\\begin\{displaymath\}(.+?)\\end\{displaymath\}", data))
@@ -53,6 +53,6 @@ class File_Reader:
 
 
 def main():
-    File_Reader()
+    reader = File_Reader()
 
 main()
