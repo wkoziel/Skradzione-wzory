@@ -9,7 +9,7 @@ class Files:
         self._prepare_data(data)
 
     def _prepare_data(self, data):
-        """Usuwa wszystkie znaki białe i mnienia tekst w jeden ciąg"""
+        """Usuwa wszystkie znaki białe i zmienia tekst w jeden ciąg"""
         data = " ".join(data.split())
         data = data.replace(" ", "")
         self._separate_formulas(data)
@@ -46,11 +46,20 @@ class Files:
         self.math.extend(list)
         list = re.findall(r"\\begin\{gather\*\}(.+?)\\end\{gather\*\}", data)
         self.math.extend(list)
+
+        # Szukanie równania z jednym $
+        list = re.findall(r"\$([^$]*)\$", data)
+        for element in reversed(list):
+            if element=="":
+                list.remove(element)
+        
+        self.math.extend(list)
+
         self._print_stats(data)
 
     def _print_stats(self, data):
         """Szybkie dane dla szukania błędów i testowania"""
-        print("DANE Z PLIKU: "+self.name+"\n"+data) #Print nazyw i tekstu z plików
+        print("\nDANE Z PLIKU: "+self.name+"\n"+data) #Print nazyw i tekstu z plików
         print("\nWZORY:"+str(self.math)) #Print listy z wzorami
 
 
