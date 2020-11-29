@@ -46,20 +46,15 @@ class Files:
         self.math.extend(list)
         list = re.findall(r"\\begin\{gather\*\}(.+?)\\end\{gather\*\}", data)
         self.math.extend(list)
-
-        # Szukanie równania z jednym $
         list = re.findall(r"\$([^$]*)\$", data)
-        for element in reversed(list):
-            if element=="":
-                list.remove(element)
-        
+        list = [elem for elem in list if elem != ""]
         self.math.extend(list)
 
         self._print_stats(data)
 
     def _print_stats(self, data):
         """Szybkie dane dla szukania błędów i testowania"""
-        print("\nDANE Z PLIKU: "+self.name+"\n"+data) #Print nazyw i tekstu z plików
+        #print("\nDANE Z PLIKU: "+self.name+"\n"+data) #Print nazyw i tekstu z plików
         print("\nWZORY:"+str(self.math)) #Print listy z wzorami
 
 
