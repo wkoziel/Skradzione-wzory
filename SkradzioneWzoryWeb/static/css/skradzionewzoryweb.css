@@ -5,11 +5,15 @@ p {
     color: #b19f9e;
     font-size: 30px;
 }
+h1{
+    color: #eeeeee;
+    font-size: 80px;
+}
 h2{
     color: #479761;
     font-size: 50px;
-
 }
+/* stylizacja przycisków do wybrania pliku i zatwierdzenia */
 button{
     display: inline-block;
     border-radius: 10px;
@@ -45,4 +49,33 @@ button{
     cursor: pointer;
     margin: 5px;
     content: "Wybierz plik"
+}
+/* Stylizacja menu*/
+.navigation-bar {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.navigation-bar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navigation-bar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.navigation-bar a.active {
+    background-color: #479761;
+    color: white;
+}
+.footer{
+    color: white;
+    text-align: center;
+    background-color: #479761;
 }

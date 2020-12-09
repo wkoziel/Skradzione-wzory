@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Skradzione Wzory</title>
+    <link rel="stylesheet" href="{% static 'css/skradzionewzoryweb.css' %}">
+</head>
+<body>
+<h1>Skradzione wzory</h1>
+<div class="navigation-bar">
+    <a class="active" href="{% url 'home' %}">Strona główna</a>
+    <a href="{% url 'run' %}">Sprawdź czy plagiat</a>
+    <a href="{% url 'about' %}">O projekcie</a>
+</div>
+{% block content %}
+{% endblock %}
+<p>Stay tuned :)</p>
+<div class="footer">Made with love by The Group With Electricity Problem</div>
+</body>
+</html>
