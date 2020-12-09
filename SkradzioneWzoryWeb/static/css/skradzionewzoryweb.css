@@ -1,5 +1,7 @@
 html {
     background-color: #19181a;
+    width: 75%;
+    margin: auto;
 }
 p {
     color: #b19f9e;
@@ -8,10 +10,12 @@ p {
 h1{
     color: #eeeeee;
     font-size: 80px;
+    text-align: center;
 }
 h2{
     color: #479761;
     font-size: 50px;
+    text-align: center;
 }
 /* stylizacja przycisków do wybrania pliku i zatwierdzenia */
 button{
@@ -73,6 +77,17 @@ button{
 .navigation-bar a.active {
     background-color: #479761;
     color: white;
+}
+
+.file-uploading{
+    margin: auto;
+    text-align: center;
+}
+.run-program{
+    border: 1px solid #333;
+    border-radius: 16px;
+    padding: 10px;
+    background-color: #333;
 }
 .footer{
     color: white;
