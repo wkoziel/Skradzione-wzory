@@ -1,3 +1,4 @@
+from sympy import *
 import os, re
 
 class Files:
@@ -77,7 +78,17 @@ class File_Reader:
             f = open("database/" + file,"r")
             self.files.append(Files(f.read(), file))
 
+def make_img(exp, f, i):
+    f = f.replace(".tex", 'wzor')
+    preview(exp, viewer='file', filename='images/test' + str(f) + str(i) + '.png')
 
 def main():
     reader = File_Reader()
+
+    for x in range(len(reader.files)):
+        for i in range (len(reader.files[x].math)):
+            print(reader.files[x].math[i])
+            make_img(r'$$' + reader.files[x].math[i] + '$$', reader.files[x].name, i) 
+
+
 main()
