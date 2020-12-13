@@ -51,6 +51,9 @@ class Files:
         list = [elem for elem in list if elem != ""]
         self.math.extend(list)
 
+        for i in range(len(self.math)):
+            self.math[i] = self.math[i].replace('&', '')
+
         self._print_stats(data)
 
     def _print_stats(self, data):
