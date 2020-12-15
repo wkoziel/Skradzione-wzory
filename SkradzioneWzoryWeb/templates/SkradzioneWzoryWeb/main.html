@@ -8,9 +8,19 @@
 <body>
 <h1>Skradzione wzory</h1>
 <div class="navigation-bar">
-    <a class="active" href="{% url 'home' %}">Strona główna</a>
-    <a href="{% url 'run' %}">Sprawdź czy plagiat</a>
-    <a href="{% url 'about' %}">O projekcie</a>
+    {% if home %}
+        <a class="active" href="{% url 'home' %}" id='main'>Strona główna</a>
+        <a href="{% url 'run' %}" id='run'>Sprawdź czy plagiat</a>
+        <a href="{% url 'about' %}" id='about'>O projekcie</a>
+    {% elif run %}
+        <a href="{% url 'home' %}" id='main'>Strona główna</a>
+        <a class='active' href="{% url 'run' %}" id='run'>Sprawdź czy plagiat</a>
+        <a href="{% url 'about' %}" id='about'>O projekcie</a>
+    {% elif about %}
+        <a href="{% url 'home' %}" id='main'>Strona główna</a>
+        <a href="{% url 'run' %}" id='run'>Sprawdź czy plagiat</a>
+        <a class='active' href="{% url 'about' %}" id='about'>O projekcie</a>
+    {% endif %}
 </div>
 {% block content %}
 {% endblock %}

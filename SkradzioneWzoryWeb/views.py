@@ -14,11 +14,11 @@ def run_algorithms (request):
         print("Pliki dostepne w bazie danych to: ", context)
         #drukuję w konsoli zawartość pobranego przez użytkownika pliku
         print(uploaded_file.read().decode())
-        return render(request, 'SkradzioneWzoryWeb/run.html', {'instance': user_file})
-    return render(request, 'SkradzioneWzoryWeb/run.html', {})
+        return render(request, 'SkradzioneWzoryWeb/run.html', {'instance': user_file, 'home': False, 'run': True, 'about': False})
+    return render(request, 'SkradzioneWzoryWeb/run.html', {'home': False, 'run': True, 'about': False})
 
 def about_project(request):
-    return render(request, 'SkradzioneWzoryWeb/about.html', {})
+    return render(request, 'SkradzioneWzoryWeb/about.html', {'home': False, 'run': False, 'about': True})
 
 def home_page(request):
-    return render(request, 'SkradzioneWzoryWeb/welcome.html', {})
+    return render(request, 'SkradzioneWzoryWeb/welcome.html', {'home': True, 'run': False, 'about': False})

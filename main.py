@@ -90,7 +90,7 @@ def main():
 
     for x in range(len(reader.files)):
         for i in range (len(reader.files[x].math)):
-            print(reader.files[x].math[i])
+            #print(reader.files[x].math[i])
             make_img(r'$$' + reader.files[x].math[i] + '$$', reader.files[x].name, i) 
 
 
