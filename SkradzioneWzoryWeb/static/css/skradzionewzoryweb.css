@@ -17,6 +17,14 @@ h2{
     font-size: 50px;
     text-align: center;
 }
+a{
+    color: #eeeeee;
+    font-size: 22px;
+}
+ul{
+    color: #eeeeee;
+    font-size: 20px;
+}
 /* stylizacja przycisków do wybrania pliku i zatwierdzenia */
 button{
     display: inline-block;
@@ -93,4 +101,38 @@ button{
     color: white;
     text-align: center;
     background-color: #479761;
+}
+
+li a{
+    color:#479761;
+}
+.flex-zakladki {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+  
+.flex-zakladki > div {
+    background-color: #333;
+    border-radius: 16px;
+    color: #479761;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+}
+
+.flex-podpisy {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+  
+.flex-podpisy > div {
+    color: white;
+    margin-bottom: 15px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 22px;
+    
+    margin: 10px;
 }
