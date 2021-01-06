@@ -6,7 +6,13 @@
     <link rel="stylesheet" href="{% static 'css/skradzionewzoryweb.css' %}">
 </head>
 <body>
-<h1>Skradzione wzory</h1>
+
+<div class="tytullogo">
+    <img src="{% static 'images/skradzione-wzory-logo2.png' %}">
+    <h1>Skradzione wzory</h1>
+    <img src="{% static 'images/skradzione-wzory-logo.png' %}">
+</div>
+
 <div class="navigation-bar">
     {% if home %}
         <a class="active" href="{% url 'home' %}" id='main'>Strona główna</a>

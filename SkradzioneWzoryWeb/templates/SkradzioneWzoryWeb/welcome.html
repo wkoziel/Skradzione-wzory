@@ -4,8 +4,16 @@
 <center><p>Witamy na oficjalnej stronie naszego projektu! <br>
     Zapraszamy do odwiedzenia następujących zakładek:</p>
     <div class="flex-zakladki">
-        <div>Sprawdź czy plagiat</div>
-        <div>O projekcie</div>
+        {% if home %}
+            <a href="{% url 'run' %}" id='run'>Sprawdź czy plagiat</a>
+            <a href="{% url 'about' %}" id='about'>O projekcie</a>
+        {% elif run %}
+            <a class='active' href="{% url 'run' %}" id='run'>Sprawdź czy plagiat</a>
+            <a href="{% url 'about' %}" id='about'>O projekcie</a>
+        {% elif about %}
+            <a href="{% url 'run' %}" id='run'>Sprawdź czy plagiat</a>
+            <a class='active' href="{% url 'about' %}" id='about'>O projekcie</a>
+        {% endif %}
     </div>
 
     <div class="flex-podpisy">

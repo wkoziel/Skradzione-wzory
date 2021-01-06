@@ -1,4 +1,83 @@
 {% extends 'SkradzioneWzoryWeb/main.html' %}
 {% block content %}
-<p>Witamy na oficjalnej stronie naszego projektu!</p>
+
+<p>Krótki opis projektu</p>
+
+<div class="krotki-opis">
+    <a>Projekt polega na detekcji plagiatów w tekstach matematycznych. <br>
+        Użytkownik wybiera plik formatu TeX, który jest porównywany z stworzoną przez
+        nas bazą plików i liczone jest procentowe podobieństwo między nimi. <br>
+        Metodą do
+        tego wykorzystywaną jest porównywanie graficzne. <br>
+        Projekt został zrobiony na potrzeby przedmiotu "Inżynieria Oprogramowania" przez
+        Dominikę Limanówkę, Tatianę Cieślar, Piotra Hadama oraz Wojciecha Kozła.
+    </a>
+    
+    <img src="https://matfiz24.pl/wp-content/uploads/2015/09/matematyka.jpg">
+</div>
+
+
+<br>
+<p>Czym jest plagiat?</p>
+    <a>Plagiat jest to przywłaszczenie sobie części lub całości obcego utworu 
+        bez podania danych bibliograficznych. <br>
+        Możemy podzielić go na dwa rodzaje:</a>
+
+    <div class="flex-plagiat">
+        <a>Plagiat jawny</a>
+        <a>Plagiat ukryty</a>
+    </div>
+
+    <div class="flex-podpisy">
+        <div>Przejęcie całości lub części cudzego utworu nie zmieniając treści 
+        w żaden sposób.</div>
+        <div>Przywłaszczenie sobie tylko fragmentów czyjegoś dzieła, 
+        w których użyte są inne wyrazy, ale oddające dokładnie taką samą treść.</div>
+    </div>
+
+
+<p>Uwarunkowania prawne</p>
+<a>W celu dowiedzenia się, co tak naprawdę możemy uznać jako plagiat sięgnęliśmy
+    do "Ustawy o prawie autorskim i prawach pokrewnych".
+<a>Po odpowiedniej analizie wywnioskowaliśmy, że same w sobie wzory nie podlegają 
+    prawu autorskiemu, jednak nasz projekt szuka wielokrotnych powtórzeń wzorów w utworze, 
+    tak aby na ich podstawie określić podobieństwo dwóch utworów i wtedy ewentualnie zostać
+    zaklasyfikowanym jako plagiat.
+</a>
+
+<center><p>Narzędzia, języki programowania, systemy i technologie</p></center>
+
+
+
+<div class="narzedzia-jezyki">
+    <img src="https://camo.githubusercontent.com/888e388801f947dec7c3d843942c277af25fe2b1aed1821542c4e711f210312a/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f7468756d622f632f63332f507974686f6e2d6c6f676f2d6e6f746578742e7376672f37363870782d507974686f6e2d6c6f676f2d6e6f746578742e7376672e706e67">
+    <img src="https://cdn.iconscout.com/icon/free/png-512/django-2-282855.png">
+    <img src="https://www.pythonanywhere.com/static/anywhere/images/PA-logo-large-icononly.png">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/IntelliJ_IDEA_Logo.svg/1024px-IntelliJ_IDEA_Logo.svg.png">
+    <img src="https://cdn.freebiesupply.com/logos/thumbs/2x/latex-logo.png">
+</div>
+
+<div class="narzedzia-podpisy">
+    <a>Python</a>
+    <a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Django</a>
+    <a>PythonAnywhere</a>
+    <a>IntelliJ Idea</a>
+    <a>LateX</a>
+</div>
+
+<div class="narzedzia-opisy">
+    
+    <a>Główny język naszego projektu. W nim zaimplementowane zostały wszystkie algorytmy
+        porównujące dokumenty i wyszukujące plagiaty.</a>
+    <a>Jest to framework przeznaczony do tworzenia aplikacji internetowych. 
+        Został wykorzystany do stworzenia interfejsu graficznego naszej aplikacji.</a>
+    <a>Jest to platforma hostingowa i środowisko programistyczne. 
+        Została wykorzystana do hostowania naszej aplikacji webowej.</a>
+    <a>Do pisania aplikacji webowej w django skorzystaliśmy z wersji Ultimate tego 
+        narzędzia, ponieważ jest ono darmowe dla studentów oraz umożliwia pracę z css w aplikacji.
+    </a>
+    <a>Jest językiem, w którym napisane zostały dokumenty porównywane przez nasz program. </a>
+</div>
+
+
 {% endblock %}

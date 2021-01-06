@@ -19,7 +19,7 @@ h2{
 }
 a{
     color: #eeeeee;
-    font-size: 22px;
+    font-size: 19px;
 }
 ul{
     color: #eeeeee;
@@ -103,28 +103,32 @@ button{
     background-color: #479761;
 }
 
-li a{
-    color:#479761;
-}
+/* Strona główna */
 .flex-zakladki {
     display: flex;
     justify-content: space-around;
     margin-top: 15px;
 }
   
-.flex-zakladki > div {
+.flex-zakladki > a {
     background-color: #333;
     border-radius: 16px;
+    text-decoration: none;
     color: #479761;
     margin: 10px;
     padding: 20px;
     font-size: 30px;
 }
 
+.flex-zakladki a:hover {
+    background-color: white;
+    color: #19181a;
+}
+
 .flex-podpisy {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 15px;
+    margin-bottom: 35px;
 }
   
 .flex-podpisy > div {
@@ -132,7 +136,117 @@ li a{
     margin-bottom: 15px;
     padding-right: 20px;
     padding-left: 20px;
-    font-size: 22px;
+    font-size: 21px;
+    text-align: center;
     
     margin: 10px;
+}
+
+/* Tytuł i logo */
+.tytullogo{
+    display: flex;
+    justify-content: space-around;
+}
+
+.tytullogo h1{
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.tytullogo img{
+    border-radius: 20px;
+    margin-top: 33px;
+    height: 130px;
+    width: 130px;
+}
+
+/* Strona o projekcie */
+
+.narzedzia-jezyki{
+    display: flex;
+}
+
+.narzedzia-jezyki img{
+    max-width: 170px;
+    max-height: 170px;
+    margin: 11px;
+}
+
+.narzedzia-podpisy {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.narzedzia-podpisy a{
+    color: #b19f9e;
+    font-size: 24px;
+    text-align: center;
+    margin: 10px;
+}
+
+.narzedzia-opisy {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 60px;
+    
+}
+
+.narzedzia-opisy a{
+    font-size: 16px;
+    margin: 10px;
+    text-align: center;
+}
+
+.krotki-opis{
+    display: flex;
+}
+
+.krotki-opis img{
+    max-height: 230px;
+}
+
+/* Plagiat jawny i ukryty */
+
+.flex-plagiat {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+  
+.flex-plagiat > a {
+    background-color: #333;
+    border-radius: 16px;
+    color: #479761;
+    margin: 10px;
+    margin-right: 90px;
+    padding: 20px;
+    font-size: 30px;
+}
+
+@media screen and (max-width: 1250px) {
+    .narzedzia-jezyki img {
+         width: 140px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .narzedzia-jezyki img {
+         width: 120px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .narzedzia-jezyki img {
+         width: 100px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .narzedzia-jezyki img {
+         width: 70px;
+    }
 }
