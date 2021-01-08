@@ -1,5 +1,6 @@
 from sympy import *
-import os, re
+from PIL import Image, ImageChops
+import os, re, imagehash
 
 class Files:
 
@@ -54,11 +55,11 @@ class Files:
         for i in range(len(self.math)):
             self.math[i] = self.math[i].replace('&', '')
 
-        self._print_stats(data)
+        #self._print_stats(data)
 
     def _print_stats(self, data):
         """Szybkie dane dla szukania błędów i testowania"""
-        #print("\nDANE Z PLIKU: "+self.name+"\n"+data) #Print nazyw i tekstu z plików
+        print("\nDANE Z PLIKU: "+self.name+"\n"+data) #Print nazyw i tekstu z plików
         print("\nWZORY:"+str(self.math)) #Print listy z wzorami
 
 
@@ -73,7 +74,6 @@ class File_Reader:
         """Zwraca nazwy plików znajdujących się w /database"""
         return os.listdir('database')
 
-
     def _read_file(self):
         """Zwraca nazwy plików znajdujących się w /database"""
         file_names = self._names_download()
@@ -81,17 +81,37 @@ class File_Reader:
             f = open("database/" + file,"r")
             self.files.append(Files(f.read(), file))
 
+    def compare(path1, path2):
+        img1 = Image.open(path1)
+        img2 = Image.open(path2)
+
+        hash0 = imagehash.average_hash(img1)
+        hash1 = imagehash.average_hash(img2)
+
+        max_diff = 10
+        diff = hash0 - hash1
+
+        if diff < max_diff:
+            print('Wzory SĄ podobne')
+            return True
+        else:
+            print('Wzory NIE są podobne')
+            return False
+
 def make_img(exp, f, i):
     f = f.replace(".tex", 'wzor')
+    print("robie obrazek"+ str(f) + str(i) + '.png')
     preview(exp, viewer='file', filename='images/test' + str(f) + str(i) + '.png')
+
+def image_making_loop(reader):
+    for x in range(len(reader.files)):
+            for i in range (len(reader.files[x].math)):
+                print(reader.files[x].math[i])
+                #make_img(r'$$' + reader.files[x].math[i] + '$$', reader.files[x].name, i)
 
 def main():
     reader = File_Reader()
-
-    for x in range(len(reader.files)):
-        for i in range (len(reader.files[x].math)):
-            #print(reader.files[x].math[i])
-            make_img(r'$$' + reader.files[x].math[i] + '$$', reader.files[x].name, i) 
+    #image_making_loop(reader)
 
 
 main()
