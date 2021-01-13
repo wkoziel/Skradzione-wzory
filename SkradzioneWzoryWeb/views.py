@@ -5,17 +5,21 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from SkradzioneWzoryWeb.models import File
 
-def run_algorithms (request):
+from .alogrythm import *
 
+def run_algorithms(request):
     if request.method == 'POST':
+                    #user_file = File()
+                    #context = user_file.list_all_files_from_database()
+                    #print("Pliki dostepne w bazie danych to: ", context)
         uploaded_file = request.FILES['document']
-        user_file = File()
-        context = user_file.list_all_files_from_database()
-        print("Pliki dostepne w bazie danych to: ", context)
-        #drukuję w konsoli zawartość pobranego przez użytkownika pliku
-        print(uploaded_file.read().decode())
-        return render(request, 'SkradzioneWzoryWeb/run.html', {'instance': user_file, 'home': False, 'run': True, 'about': False})
+        if uploaded_file.name.endswith(".tex"):
+            context = alghoritm(uploaded_file.read().decode())
+        else:
+            context = "Nie udało się załadować pliku.\n Upewnij się że plik ma rozszerzenie .tex"
+        return render(request, 'SkradzioneWzoryWeb/result.html', {'home': False, 'run': True, 'about': False, 'math': context})
     return render(request, 'SkradzioneWzoryWeb/run.html', {'home': False, 'run': True, 'about': False})
+
 
 def about_project(request):
     return render(request, 'SkradzioneWzoryWeb/about.html', {'home': False, 'run': False, 'about': True})
