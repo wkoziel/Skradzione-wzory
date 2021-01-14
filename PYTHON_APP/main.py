@@ -1,6 +1,8 @@
 from sympy import *
 from PIL import Image, ImageChops
 import os, re, imagehash
+import requests
+from io import BytesIO
 
 class Files:
 
@@ -98,6 +100,43 @@ class File_Reader:
             print('Wzory NIE są podobne')
             return False
 
+def compare2(w1, w2):
+    print(w1)
+    print(w2)
+
+    obj1 = BytesIO()
+    preview("$$"+w1+"$$", output='png', viewer='BytesIO', outputbuffer=obj1)
+    img1 = Image.open(obj1)
+
+
+    print("otw2")
+
+    obj2 = BytesIO()
+    preview("$$"+w2+"$$", output='png', viewer='BytesIO', outputbuffer=obj2)
+    img2 = Image.open(obj2)
+    print("otw2")
+
+
+    # print("obraz 1 wczytany")
+    # response = requests.get(api+w2)
+    # img2 = Image.open(BytesIO(response.content))
+    # print("obraz 2 wczytany")
+    hash0 = imagehash.average_hash(img1)
+    hash1 = imagehash.average_hash(img2)
+
+    print(hash0)
+    print(hash1)
+    max_diff = 10
+    diff = hash0 - hash1
+
+    if diff < max_diff:
+        print('Wzory SĄ podobne')
+        return True
+    else:
+        print('Wzory NIE są podobne')
+        return False
+
+
 def make_img(exp, f, i):
     f = f.replace(".tex", 'wzor')
     print("robie obrazek"+ str(f) + str(i) + '.png')
@@ -111,6 +150,7 @@ def image_making_loop(reader):
 
 def main():
     reader = File_Reader()
+    compare2(reader.files[0].math[0], reader.files[0].math[1])
     #image_making_loop(reader)
 
 

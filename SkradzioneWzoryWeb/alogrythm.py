@@ -1,4 +1,8 @@
+from io import BytesIO
 from re import findall
+from PIL import Image
+from sympy import preview
+import imagehash
 
 def cut_out_math(data):
     data = " ".join(data.split())
@@ -39,5 +43,34 @@ def cut_out_math(data):
     math.extend(list)
     return math
 
+def create_list_of_hashes(math):
+    math_hash = []
+    for i in math:
+        byteImgIO = BytesIO()
+        preview(r'$$' + i + '$$', output='png', viewer='BytesIO', outputbuffer=byteImgIO)
+        img = Image.open(byteImgIO)
+        #UWAGA! OTWIERANIE OBRAZÓW PRZEZ APLIKACJE LINIJKA NIŻEJ
+        #img.show()
+        math_hash.append(imagehash.average_hash(img))
+    return math_hash
+
+def compare_hashes(math_hash):
+    #To wgl nie ma narazie sensu, sprawdzam tylko czy działa xd
+    result = []
+    for i in math_hash:
+        for j in math_hash:
+            if i != j:
+                    cutoff = 10
+                    diff = i - j
+                    print(diff)
+                    if diff < cutoff:
+                        result.append(str(i)+" oraz "+str(j)+" są podobne")
+
+    return result
+
+
 def alghoritm(data):
-    return cut_out_math(data)
+    math = cut_out_math(data)
+    math_hash = create_list_of_hashes(math)
+    result = compare_hashes(math_hash)
+    return result
