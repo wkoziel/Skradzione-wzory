@@ -6,7 +6,7 @@ import imagehash
 
 def cut_out_math(data):
     data = " ".join(data.split())
-    data = data.replace(" ", "")
+    #data = data.replace(" ", "")
     math = []
     list = findall(r"\$\$(.+?)\$\$", data)
     math.extend(list)
@@ -46,6 +46,7 @@ def cut_out_math(data):
 def create_list_of_hashes(math):
     math_hash = []
     for i in math:
+        print("Przetwarzane: "+i)
         byteImgIO = BytesIO()
         preview(r'$$' + i + '$$', output='png', viewer='BytesIO', outputbuffer=byteImgIO)
         img = Image.open(byteImgIO)
@@ -68,6 +69,12 @@ def compare_hashes(math_hash):
 
     return result
 
+def get_file_math(data):
+    return cut_out_math(data)
+
+def get_file_hash(data):
+    math = cut_out_math(data)
+    return create_list_of_hashes(math)
 
 def alghoritm(data):
     math = cut_out_math(data)

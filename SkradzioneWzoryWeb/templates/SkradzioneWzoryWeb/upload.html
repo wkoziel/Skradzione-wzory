@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Skradzione Wzory</title>
+    <link rel="stylesheet" href="{% static 'css/skradzionewzoryweb.css' %}">
+</head>
+<body>
+<form class="file-uploading" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="document" id="file" class="inputfile"/>
+        <label for="file">Wybierz plik</label>
+        <button type="submit">Zatwierdź</button>
+    </form>
+
+    {% if text %}
+        <p>{{ context }}</p>
+    {% endif %}
+</body>
+</html>
