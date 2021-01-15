@@ -52,7 +52,9 @@ def create_list_of_hashes(math):
         img = Image.open(byteImgIO)
         #UWAGA! OTWIERANIE OBRAZÓW PRZEZ APLIKACJE LINIJKA NIŻEJ
         #img.show()
-        math_hash.append(imagehash.average_hash(img))
+        hash = imagehash.average_hash(img)
+        print(hash.__repr__)
+        math_hash.append(hash)
     return math_hash
 
 def compare_hashes(math_hash):
@@ -63,7 +65,6 @@ def compare_hashes(math_hash):
             if i != j:
                     cutoff = 10
                     diff = i - j
-                    print(diff)
                     if diff < cutoff:
                         result.append(str(i)+" oraz "+str(j)+" są podobne")
 
