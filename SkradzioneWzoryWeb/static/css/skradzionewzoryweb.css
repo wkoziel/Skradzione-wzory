@@ -227,6 +227,13 @@ button{
     font-size: 30px;
 }
 
+.info {
+    text-align: center;
+    margin: 10px;
+    color: #ddd;
+    background-color: #479761;
+}
+
 @media screen and (max-width: 1250px) {
     .narzedzia-jezyki img {
          width: 140px;

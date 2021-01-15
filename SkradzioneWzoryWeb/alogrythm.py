@@ -41,6 +41,8 @@ def cut_out_math(data):
     list = findall(r"\$([^$]*)\$", data)
     list = [elem for elem in list if elem != ""]
     math.extend(list)
+    for i in range(len(math)):
+            math[i] = math[i].replace('&', '')
     return math
 
 def create_list_of_hashes(math):

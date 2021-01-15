@@ -48,4 +48,6 @@ def upload_page(request):
                 add_math.save()
 
             return render(request, 'SkradzioneWzoryWeb/upload.html', {'text' : "Zakończono dodawanie pliku"})
-    return render(request, 'SkradzioneWzoryWeb/upload.html', {'text': "Coś poszło nie tak"})
+        else:
+            return render(request, 'SkradzioneWzoryWeb/upload.html', {'text': "Coś poszło nie tak"})
+    return render(request, 'SkradzioneWzoryWeb/upload.html', {})
