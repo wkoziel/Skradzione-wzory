@@ -47,7 +47,7 @@ def upload_page(request):
                 add_math = Math.objects.create(math_text = m, hash_text = str(h), file_fk = upload_file)
                 add_math.save()
 
-            return render(request, 'SkradzioneWzoryWeb/upload.html', {'text' : "Zakończono dodawanie pliku"})
+            return render(request, 'SkradzioneWzoryWeb/upload.html', {'text' : "Zakończono dodawanie pliku", 'colour': "rgb(49, 164, 43)"})
         else:
-            return render(request, 'SkradzioneWzoryWeb/upload.html', {'text': "Coś poszło nie tak"})
+            return render(request, 'SkradzioneWzoryWeb/upload.html', {'text': "Coś poszło nie tak", 'colour': "rgb(194, 13, 13)"})
     return render(request, 'SkradzioneWzoryWeb/upload.html', {})
