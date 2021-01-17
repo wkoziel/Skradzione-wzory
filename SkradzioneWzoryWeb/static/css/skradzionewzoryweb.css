@@ -104,20 +104,29 @@ button{
 }
 
 /* Strona główna */
-.flex-zakladki {
+.flex-zakladki, .flex-plagiat {
     display: flex;
     justify-content: space-around;
     margin-top: 15px;
+    
 }
+
+.oficjalna-strona{
+    text-align: center;
+    margin-top: 30px;
+    
+}
+
   
-.flex-zakladki > a {
-    background-color: #333;
+.flex-zakladki > a, .flex-plagiat > a{
+    background-color:rgb(36, 36, 36);
     border-radius: 16px;
     text-decoration: none;
     color: #479761;
     margin: 10px;
     padding: 20px;
     font-size: 30px;
+    text-align: center;
 }
 
 .flex-zakladki a:hover {
@@ -125,21 +134,23 @@ button{
     color: #19181a;
 }
 
-.flex-podpisy {
+.flex-podpisy, .plagiat-podpisy {
     display: flex;
     justify-content: space-around;
     margin-bottom: 35px;
+    /* margin-left: 40px; */
 }
   
-.flex-podpisy > div {
+.flex-podpisy > div, .plagiat-podpisy > div {
     color: white;
     margin-bottom: 15px;
-    padding-right: 20px;
-    padding-left: 20px;
     font-size: 21px;
     text-align: center;
-    
     margin: 10px;
+}
+
+.plagiat-podpisy > div{
+    margin-left: 80px;
 }
 
 /* Tytuł i logo */
@@ -162,21 +173,34 @@ button{
 
 /* Strona o projekcie */
 
+.narzedzia {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #333;
+    border-radius: 16px;
+    padding: 10px;
+    background-color: #333;
+    margin-bottom: 30px;
+    margin: auto;
+}
+
 .narzedzia-jezyki{
     display: flex;
+    flex-direction: column;
 }
 
 .narzedzia-jezyki img{
     max-width: 170px;
     max-height: 170px;
-    margin: 11px;
+    margin: 8px;
 }
 
 .narzedzia-podpisy {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     margin-left: 30px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .narzedzia-podpisy a{
@@ -188,49 +212,28 @@ button{
 
 .narzedzia-opisy {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     margin-left: 10px;
-    margin-top: 10px;
-    margin-bottom: 60px;
+    margin-top: 30px;
+    margin-bottom: 10px;
     
 }
 
 .narzedzia-opisy a{
-    font-size: 16px;
+    font-size: 19px;
     margin: 10px;
     text-align: center;
 }
 
-.krotki-opis{
-    display: flex;
-}
 
-.krotki-opis img{
-    max-height: 230px;
-}
-
-/* Plagiat jawny i ukryty */
-
-.flex-plagiat {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 15px;
-}
-  
-.flex-plagiat > a {
-    background-color: #333;
+.krotki-opis, .plagiat, .oficjalna-strona{
+    border: 1px solid #333;
     border-radius: 16px;
-    color: #479761;
-    margin: 10px;
-    margin-right: 90px;
-    padding: 20px;
-    font-size: 30px;
+    padding: 10px;
+    background-color: #333;
 }
 
-.info {
-    text-align: center;
-    color: #ddd;
-}
 
 /* Results */
 .comparison {
@@ -245,26 +248,11 @@ button{
     padding: 5px;
 }
 
-@media screen and (max-width: 1250px) {
-    .narzedzia-jezyki img {
-         width: 140px;
-    }
-}
-
-@media screen and (max-width: 1000px) {
-    .narzedzia-jezyki img {
-         width: 120px;
-    }
-}
-
 @media screen and (max-width: 900px) {
-    .narzedzia-jezyki img {
-         width: 100px;
+    .narzedzia-opisy a{
+        font-size: 14px;
     }
-}
-
-@media screen and (max-width: 700px) {
-    .narzedzia-jezyki img {
-         width: 70px;
+    .plagiat-podpisy > div{
+        margin-left: 40px;
     }
-}
+} 
