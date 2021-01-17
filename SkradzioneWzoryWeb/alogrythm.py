@@ -1,5 +1,5 @@
 from io import BytesIO
-from re import findall
+from re import findall, match
 from PIL import Image
 from sympy import preview
 import imagehash
@@ -74,7 +74,7 @@ def get_hashes_for_file(dir):
     """Wywołuje pobranie hashu dla każdego pliku z folderu"""
     hash_db = []
     for i in range(1,10):
-        file = "w"+str(i)+".png"
+        file = str(i)+".png"
         hash_db.append([dir+"/"+file, get_file_from_database(dir+"/"+file)])
     return hash_db
 
@@ -82,23 +82,29 @@ def compare_hashes(loaded_file_data):
     """Metoda porównująca zawartość bazy i plik źródłowy"""
     #Zestaw folderów z bazy danych
     files = []
-    for i in range(1,4):
+    for i in range(1,29):
         files.append("ex"+str(i))
+
+    base = "http://127.0.0.1:8000/static/database/"
 
     results = []
     for file in files:
         math_to_compare = get_hashes_for_file(file)
-
+        match_data = []
+        matches = 0
         for i in loaded_file_data:
-            match_data = []
+
             for j in math_to_compare:
                 diff = i[1] - j[1]
                 if diff < 10:
-                    match_data.extend([i[0], j[0], diff])
+                    matches += 1
+                    sim = 100 - diff
+                    match_data.append([i[0], base+j[0], sim])
                     break
-            if match_data:
-                results.extend([file, match_data])
-
+        is_enaugh = len(loaded_file_data) / 2
+        if match_data and matches > is_enaugh:
+            similarity = matches / len(loaded_file_data) * 100
+            results.append([file, match_data, similarity])
     return results
 
 
@@ -117,9 +123,7 @@ def get_loaded_file_data(data):
         loaded_file_data.append([i, j])
     return loaded_file_data
 
-
 def alghoritm(data):
-    # loaded_file_data zawiera [[wzór, hash], [wzór, hash], [wzór, hash]] pliku źródłowego
     loaded_file_data = get_loaded_file_data(data)
     results = compare_hashes(loaded_file_data)
     return results
