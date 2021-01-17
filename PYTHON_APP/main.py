@@ -148,10 +148,64 @@ def image_making_loop(reader):
                 print(reader.files[x].math[i])
                 #make_img(r'$$' + reader.files[x].math[i] + '$$', reader.files[x].name, i)
 
+def separate_formulas(data):
+    """Wyszukuje wzory pomiędzy zadanymi komendami i zapisuje w liście jednowymiarowej math"""
+    math = []
+    list = re.findall(r"\$\$(.+?)\$\$", data)
+    math.extend(list)
+    list = re.findall(r"\\\[(.+?)\\\]", data)
+    math.extend(list)
+    list = re.findall(r"\\\((.+?)\\\)", data)
+    math.extend(list)
+    list = re.findall(r"\\begin\{displaymath\}(.+?)\\end\{displaymath\}", data)
+    math.extend(list)
+    list = re.findall(r"\\begin\{math\}(.+?)\\end\{math\}", data)
+    math.extend(list)
+    list = re.findall(r"\\begin\{equation\}(.+?)\\end\{equation\}", data)
+    math.extend(list)
+    list = re.findall(r"\\begin\{equation\*\}(.+?)\\end\{equation\*\}", data)
+    math.extend(list)
+    list = re.findall(r"\\begin\{eqnarray\}(.+?)\\end\{eqnarray\}", data)
+    math.extend(list)
+    list = re.findall(r"\\begin\{eqnarray\*\}(.+?)\\end\{eqnarray\*\}", data)
+    math.extend(list)
+    list = re.findall(r"\\begin\{align\}(.+?)\\end\{align\}", data)
+    math.extend(list)
+    list = re.findall(r"\\begin\{align\*\}(.+?)\\end\{align\*\}", data)
+    math.extend(list)
+    list = re.findall(r"\\begin\{multline\}(.+?)\\end\{multline\}", data)
+    math.extend(list)
+    list = re.findall(r"\\begin\{multline\*\}(.+?)\\end\{multline\*\}", data)
+    math.extend(list)
+    list = re.findall(r"\\begin\{gather\}(.+?)\\end\{gather\}", data)
+    math.extend(list)
+    list = re.findall(r"\\begin\{gather\*\}(.+?)\\end\{gather\*\}", data)
+    math.extend(list)
+    list = re.findall(r"\$([^$]*)\$", data)
+    list = [elem for elem in list if elem != ""]
+    math.extend(list)
+
+    for i in range(len(math)):
+       math[i] =math[i].replace('&', '')
+
+    return math
+
+
+def create_database():
+    pliki = os.listdir('database')
+    file_names = pliki
+    for file in file_names:
+        f = open("database/" + file,"r")
+        data = f
+        data = " ".join(data.split())
+        math = separate_formulas(data)
+
 def main():
     reader = File_Reader()
     compare2(reader.files[0].math[0], reader.files[0].math[1])
     #image_making_loop(reader)
+
+
 
 
 main()

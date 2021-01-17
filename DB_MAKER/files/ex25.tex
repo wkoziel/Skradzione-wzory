@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[MeX,plmath]{polski} 
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+\title{Wzór Taylora}
+\maketitle
+
+\section*{Wprowadzenie}
+Wzór Taylora – przedstawienie funkcji (n + 1)-razy różniczkowalnej za pomocą wielomianu zależnego od kolejnych jej pochodnych oraz dostatecznie małej reszty. Twierdzenia mówiące o możliwości takiego przedstawiania pewnych funkcji (nawet dość abstrakcyjnych przestrzeni) noszą zbiorczą nazwę twierdzeń Taylora od nazwiska angielskiego matematyka Brooka Taylora, który opublikował pracę na temat lokalnego przybliżania funkcji rzeczywistych w podany niżej sposób. Ta własność funkcji różniczkowalnych znana była już przed Taylorem – w 1671 odkrył ją James Gregory.
+
+W przypadku funkcji nieskończenie wiele razy różniczkowalnych, przedstawienie oparte na tej własności może przyjąć postać szeregu zwanego szeregiem Taylora. Poniżej podane jest uogólnione twierdzenie Taylora dla funkcji o wartościach w dowolnych przestrzeniach unormowanych – w szczególności jest więc ono prawdziwe dla funkcji o wartościach rzeczywistych czy wektorowych. 
+
+\section*{Twierdzenie Taylora}
+Niech Y będzie przestrzenią unormowaną oraz $ f\colon [a,b]\to Y $ będzie funkcją (n + 1)-razy różniczkowalną na przedziale [a, b] w sposób ciągły (na końcach przedziału zakłada się różniczkowalność z lewej, bądź odpowiednio, z prawej strony). Wówczas dla każdego punktu x z przedziału (a, b) spełniony jest wzór zwany wzorem Taylora 
+\begin{multline*} 
+f(x)=f(a)+{\frac {x-a}{1!}}f^{(1)}(a)+{\frac {(x-a)^{2}}{2!}}f^{(2)}(a)+\ldots +{\frac {(x-a)^{n}}{n!}}f^{(n)}(a)+R_{n}(x,a)\\=\sum \limits _{k=0}^{n}\left({\frac {(x-a)^{k}}{k!}}f^{(k)}(a)\right)+R_{n}(x,a)
+\end{multline*}
+gdzie $ R_{n}(x,a) $ spełnia warunek
+$$ \lim _{{x\to a}}{\frac  {R_{n}(x,a)}{(x-a)^{n}}}=0 $$
+Funkcja ta nazywana jest resztą Peana we wzorze Taylora. W przypadku a = 0, wzór Taylora nazywany jest wzorem Maclaurina. 
+
+Przybliżanie funkcji za pomocą wzoru Taylora ma charakter lokalny, tzn. odnosi się jedynie do otoczenia wybranego punktu a. Jeżeli w zastosowaniach pojawia się potrzeba mówienia o innych wartościach, to zakłada się o nich najczęściej, że są dostatecznie bliskie punktu a. Sensowne wydaje się jednak pytanie o to, kiedy wielomian ze wzoru Taylora przybliża funkcję ze z góry zadaną dokładnością – w tym celu potrzebne jest dokładniejsze oszacowanie reszty lub po prostu wyrażenie jej w sposób jawny. 
+
+\subsection*{Reszty we wzorze Taylora wyrażone w sposób jawny}
+W przypadku gdy Y jest ciałem liczb rzeczywistych, resztę we wzorze Taylora można wyrazić w sposób jawny. Oto niektóre ze znanych przedstawień reszty: 
+
+\subsubsection*{Reszta w postaci całkowej}
+\[ R_{n}(x,a)=\int \limits _{a}^{x}{\frac {(x-t)^{n}}{n!}}f^{(n+1)}(t)dt \]
+
+\subsubsection*{Reszta w postaci Lagrange'a}
+\[ R_{n}(x,a)={\frac {(x-a)^{n+1}}{(n+1)!}}f^{(n+1)}(a+\theta (x-a)) \]
+Lub inaczej
+\[ R_{n}(x,a)={\frac {(x-a)^{n+1}}{(n+1)!}}f^{(n+1)}(\xi ) \]
+
+\subsubsection*{Reszta w postaci Cauchy'ego}
+Istnieje takie $ \theta \in [0,1] $, że
+$$ R_{n}(x,a)={\frac {(x-a)^{n+1}}{n!}}(1-\theta )^{n}f^{(n+1)}(a+\theta (x-a)) $$
+
+\subsubsection*{Reszta w postaci Schlömilcha-Roche’a}
+\begin{displaymath}
+R_{n}(x,a)={\frac {(x-a)^{p}(x-\xi )^{n+1-p}}{pn!}}f^{(n+1)}(\xi )
+\end{displaymath}
+
+\end{document}

@@ -3,10 +3,13 @@ from re import findall
 from PIL import Image
 from sympy import preview
 import imagehash
+import requests
+
+
 
 def cut_out_math(data):
+    """Wycina wzory z pliku"""
     data = " ".join(data.split())
-    #data = data.replace(" ", "")
     math = []
     list = findall(r"\$\$(.+?)\$\$", data)
     math.extend(list)
@@ -46,31 +49,58 @@ def cut_out_math(data):
     return math
 
 def create_list_of_hashes(math):
+    """Tworzy hashe z wczytywanego pliku"""
     math_hash = []
     for i in math:
         print("Przetwarzane: "+i)
         byteImgIO = BytesIO()
         preview(r'$$' + i + '$$', output='png', viewer='BytesIO', outputbuffer=byteImgIO)
         img = Image.open(byteImgIO)
-        #UWAGA! OTWIERANIE OBRAZÓW PRZEZ APLIKACJE LINIJKA NIŻEJ
-        #img.show()
         hash = imagehash.average_hash(img)
-        print(hash.__repr__)
         math_hash.append(hash)
     return math_hash
 
-def compare_hashes(math_hash):
-    #To wgl nie ma narazie sensu, sprawdzam tylko czy działa xd
-    result = []
-    for i in math_hash:
-        for j in math_hash:
-            if i != j:
-                    cutoff = 10
-                    diff = i - j
-                    if diff < cutoff:
-                        result.append(str(i)+" oraz "+str(j)+" są podobne")
+def get_file_from_database(path):
+    """Zamienia zdjęcie z bazy na hash"""
+    base = "http://127.0.0.1:8000/static/database/"
+    url = base + path
+    print("Otwieram:"+url)
+    response = requests.get(url)
+    img = Image.open(BytesIO(response.content))
+    hash = imagehash.average_hash(img)
+    return hash
 
-    return result
+def get_hashes_for_file(dir):
+    """Wywołuje pobranie hashu dla każdego pliku z folderu"""
+    hash_db = []
+    for i in range(1,10):
+        file = "w"+str(i)+".png"
+        hash_db.append([dir+"/"+file, get_file_from_database(dir+"/"+file)])
+    return hash_db
+
+def compare_hashes(loaded_file_data):
+    """Metoda porównująca zawartość bazy i plik źródłowy"""
+    #Zestaw folderów z bazy danych
+    files = []
+    for i in range(1,4):
+        files.append("ex"+str(i))
+
+    results = []
+    for file in files:
+        math_to_compare = get_hashes_for_file(file)
+
+        for i in loaded_file_data:
+            match_data = []
+            for j in math_to_compare:
+                diff = i[1] - j[1]
+                if diff < 10:
+                    match_data.extend([i[0], j[0], diff])
+                    break
+            if match_data:
+                results.extend([file, match_data])
+
+    return results
+
 
 def get_file_math(data):
     return cut_out_math(data)
@@ -79,8 +109,17 @@ def get_file_hash(data):
     math = cut_out_math(data)
     return create_list_of_hashes(math)
 
-def alghoritm(data):
+def get_loaded_file_data(data):
+    loaded_file_data = []
     math = cut_out_math(data)
     math_hash = create_list_of_hashes(math)
-    result = compare_hashes(math_hash)
-    return result
+    for i, j in zip(math, math_hash):
+        loaded_file_data.append([i, j])
+    return loaded_file_data
+
+
+def alghoritm(data):
+    # loaded_file_data zawiera [[wzór, hash], [wzór, hash], [wzór, hash]] pliku źródłowego
+    loaded_file_data = get_loaded_file_data(data)
+    results = compare_hashes(loaded_file_data)
+    return results

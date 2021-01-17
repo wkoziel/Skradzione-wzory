@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+\title{Liczby zespolone - Postać wykładnicza}
+\maketitle
+
+\section{Liczby zespolone - Postać wykładnicza}
+Rzeczywiste funkcje sin , cos , oraz exp zmiennej rzeczywistej można rozwinąć na szeregi Maclaurina: 
+$${ \sin x=\sum _{n=0}^{\infty }{\frac {(-1)^{n}x^{2n+1}}{(2n+1)!}},\ \cos x=\sum _{n=0}^{\infty }{\frac {(-1)^{n}x^{2n}}{(2n)!}},\ e^{x}=\sum _{n=0}^{\infty }{\frac {x^{n}}{n!}}}$$
+które są zbieżne dla każdego x ∈ R . Ponieważ w tych wzorach występują jedynie działania dodawania, mnożenia, dzielenia i podnoszenia do potęgi o wykładniku naturalnym, które są dobrze zdefiniowane dla liczb zespolonych, to wzory te mogą posłużyć jako definicje zespolonych funkcji zmiennej zespolonej. Mianowicie definiuje się funkcje: 
+$${ \cos :\mathbb {C} \to \mathbb {C} ,\ \cos z:=\sum _{n=0}^{\infty }{\frac {(-1)^{n}z^{2n}}{(2n)!}}}$$
+$${ \exp :\mathbb {C} \to \mathbb {C} ,\ \exp z:=\sum _{n=0}^{\infty }{\frac {z^{n}}{n!}}}$$
+Definicje te są poprawne, ponieważ szeregi występujące po prawej stronie są zbieżne dla każdego z ∈ C , gdyż kryteria zbieżności szeregów takie jak kryterium d’Alemberta i kryterium Cauchy’ego pozostają prawdziwe dla liczb zespolonych[7].
+
+Korzystając z pojęcia iloczynu Cauchy’ego szeregów, można udowodnić, że: 
+$${ \exp(z+w)=\exp(z)\exp(w)}$$
+Z definicji oraz własności szeregów wynikają następujące wzory: 
+$${ \sin(-z)=-\sin z,\ \cos(-z)=\cos z,\ e^{iz}=\cos z+i\sin z}$$
+W szczególności: ${ e^{ix}=\cos x+i\sin x,}$
+Zatem każda liczba zespolona różna od zera ma następujące przedstawienie: 
+$${ z=|z|(\cos \varphi +i\sin \varphi )=|z|e^{i\varphi },}$$
+Pierwiastki zespolone w postaci wykładniczej wyrażają się wzorami: 
+$z_{k}={\sqrt[ {n}]{|z|}}\ e^{{i{\tfrac  {\varphi +2k\pi }{n}}}}$
+Korzystając z parzystości cosinusa i nieparzystości sinusa, można też wyprowadzić następujące wzory na funkcje trygonometryczne: 
+$${ \sin z={\frac {e^{iz}-e^{-iz}}{2i}}}$$
+$${ \cos z={\frac {e^{iz}+e^{-iz}}{2}}}$$
+\end{document}

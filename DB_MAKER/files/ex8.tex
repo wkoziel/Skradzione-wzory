@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+\title{Metoda Ritza}
+\maketitle
+
+\section{Metoda Ritza}
+Metoda Ritza – metoda przybliżonego rozwiązywania zagadnień wariacyjnych, w szczególności w sytuacji gdy odpowiednie równania Eulera-Lagrange’a (wyznaczające ekstremale danego funkcjonału) są trudne do scalkowania. W mechanice kwantowej jest to jedna z metod rozwiązania równania Schrödingera. Nazwa metody pochodzi od nazwiska szwajcarskiego fizyka Walthera Ritza. 
+
+\section{Opis metody}
+Metoda Ritza jest szczególnym przypadkiem metody wariacyjnej. W tej metodzie wprowadza się do funkcji próbnej dodatkowe parametry wariacyjne, gdyż wówczas łatwo jest obliczyć ich optymalne wartości.
+
+Niech funkcja próbna będzie w postaci: 
+$${ \varphi =\sum \limits _{p=1}c_{p}\chi _{p}.}$$
+gdzie funkcja χ p  jest znana i nie jest ortonormalna. Wybór tej funkcji jest w zasadzie dowolny – powinien jedynie umożliwiać otrzymanie takiego rozmieszczenia cząstek, jakiego spodziewać się można po przesłankach fizycznych i chemicznych danego układu. Po podstawieniu powyższego równania do równania znanego z metody wariacyjnej
+$${ \epsilon ={\frac {\int \varphi ^{*}{\hat {H}}\varphi d\tau }{\int \varphi ^{*}\varphi d\tau }}}$$
+otrzyma się następujące równanie: 
+$${ \epsilon \sum \limits _{q=1}^{N}\sum \limits _{r=1}^{N}c_{r}^{*}c_{q}S_{rq}=\sum \limits _{q=1}^{N}\sum \limits _{r=1}^{N}c_{r}^{*}c_{q}H_{rq},}$$
+gdzie:
+${ S_{rq}=\int \chi _{r}^{*}\chi _{q}d\tau \quad {}}$ oraz ${ {}\quad H_{rq}=\int \chi _{r}^{*}{\hat {H}}\chi _{q}d\tau .}$
+
+Należy teraz znaleźć minimum ϵ ze względu na współczynniki c ∗ c. Są one liczbami zespolonymi, zatem istnieje 2 N  parametrów i można traktować je jako parametry niezależne. Różniczkując powyższe równanie względem c p ∗ :
+
+$${ {\frac {\partial \epsilon }{\partial c_{p}^{*}}}\sum \limits _{q=1}^{N}\sum \limits _{r=1}^{N}c_{r}^{*}c_{q}S_{rq}+\epsilon \sum \limits _{q=1}^{N}c_{q}S_{rq}=\sum \limits _{q=1}^{N}\sum \limits _{r=1}^{N}c_{q}H_{rq}.}$$
+Do znalezienia ekstremum trzeba założyć, że ${ {\frac {\partial \epsilon }{\partial c_{p}^{*}}}=0.}$
+Zatem minimalną wartość ϵ , oznaczoną jako E , E, otrzyma się z równania: 
+$${ \sum \limits _{q=1}^{N}c_{q}(H_{pq}-ES_{pq})=0,}$$
+
+Powyższy układ równań ma proste rozwiązanie c n = 0 dla wszystkich n . n. Aby układ jednorodny nie miał jednego prostego rozwiązania, wyznacznik zbudowany ze współczynników przy niewiadomych musi być zerowy:
+$${ |H_{pq}-ES_{pq}|=0.}$$
+
+est to równanie stopnia N . Jest najmniejszym pierwiastkiem, to odpowiada on stanowi podstawowemu układu, a współczynniki c i określają funkcję falową: 
+$${ \varphi =\sum \limits _{p=1}c_{i}\chi _{q}.}$$
+\end{document}
