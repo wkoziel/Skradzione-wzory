@@ -13,7 +13,7 @@ Równanie falowe – matematyczne równanie różniczkowe cząstkowe drugiego rz
 
 Ogólną postacią równania falowego jest: 
 \begin{displaymath}
-{\begin{cases}{\frac {\partial {}^{2}}{\partial t^{2}}}u-c^{2}\cdot \triangle _{x}u=0,&u:\mathbb {R} ^{n}\times \mathbb {R} _{+}\to {}\mathbb {R} ,x\in \mathbb {R} ^{n},t\in \mathbb {R} _{+}\\[2pt]u(x,0)=f(x),&f:\mathbb {R} ^{n}\to \mathbb {R} \\[2pt]{\frac {\partial {}}{\partial t}}u(x,0)=g(x),&g:\mathbb {R} ^{n}\to \mathbb {R} \end{cases}}
+{\begin{cases}{\frac {\partial {}^{2}}{\partial t^{2}}}u-c^{2}\cdot \triangle _{x}u=0,&u:\mathbb {R} ^{n}\times \mathbb {R} _{+}\to {}\mathbb {R} ,x\in \mathbb {R} ^{n},t\in \mathbb {R} _{+}\\{[2pt]}u(x,0)=f(x),&f:\mathbb {R} ^{n}\to \mathbb {R} \\{[2pt]}{\frac {\partial {}}{\partial t}}u(x,0)=g(x),&g:\mathbb {R} ^{n}\to \mathbb {R} \end{cases}}
 \end{displaymath}
 
 Skrótowo można wyrazić równanie falowe używając operatora d’Alemberta: 
@@ -30,7 +30,7 @@ Równanie falowe można wyprowadzić z równań Maxwella.
 \subsection*{Równanie struny i wzór d'Alemberta}
 Jednowymiarowe (n = 1) równanie falowe nazywa się równaniem struny lub równaniem fali płaskiej. Ma ono postać: 
 \begin{gather*}
-{\begin{cases}{\frac {\partial {}^{2}}{\partial t^{2}}}u-c^{2}\cdot \triangle _{x}u=0,&u:\mathbb {R} \times \mathbb {R} _{+}\to {}\mathbb {R} \\u(x,0)=f(x),&f:\mathbb {R} \to \mathbb {R} \\[2pt]{\frac {\partial {}}{\partial t}}u(x,0)=g(x),&g:\mathbb {R} \to \mathbb {R} \end{cases}}
+{\begin{cases}{\frac {\partial {}^{2}}{\partial t^{2}}}u-c^{2}\cdot \triangle _{x}u=0,&u:\mathbb {R} \times \mathbb {R} _{+}\to {}\mathbb {R} \\u(x,0)=f(x),&f:\mathbb {R} \to \mathbb {R} \\{[2pt]}{\frac {\partial {}}{\partial t}}u(x,0)=g(x),&g:\mathbb {R} \to \mathbb {R} \end{cases}}
 \end{gather*}
 
 Bez uwzględnienia warunków brzegowych rozwiązaniem jest: 
@@ -43,16 +43,16 @@ Jest to wzór d’Alemberta. Równanie struny jest wówczas poprawnie postawione
 
 \subsection*{Równanie struny półnieskończonej}
 Struna półnieskończona to jednowymiarowa struna przymocowana na stałe z jednego końca. Matematycznie odpowiada dodaniu dodatkowego warunku brzegowego: 
-$$ u(0,t)=0 \quad dla \: dowolnego \quad t\in \mathbb {R} $$
+$$ u(0,t)=0 {\text{ dla  dowolnego }} t\in \mathbb {R} $$
 
 Rozwiązaniem zagadnienia struny półnieskończonej jest: 
 \begin{equation*}
-{\begin{cases}u(x,t)={\frac {f(x+ct)+f(x-ct)}{2}}+{\frac {1}{2c}}\int \limits _{x-ct}^{x+ct}{g(z)dz},&x\geq {}ct\\[2pt]u(x,t)={\frac {f(x+ct)-f(ct-x)}{2}}+{\frac {1}{2c}}\int \limits _{ct-x}^{ct+x}{g(z)dz},&x<ct\end{cases}}
+{\begin{cases}u(x,t)={\frac {f(x+ct)+f(x-ct)}{2}}+{\frac {1}{2c}}\int \limits _{x-ct}^{x+ct}{g(z)dz},&x\geq {}ct\\{[2pt]}u(x,t)={\frac {f(x+ct)-f(ct-x)}{2}}+{\frac {1}{2c}}\int \limits _{ct-x}^{ct+x}{g(z)dz},&x<ct\end{cases}}
 \end{equation*}
 
 \subsection*{Równanie falowe w wymiarze 3 i wzór Kirchhoffa}
 Równanie falowe dla n = 3 ma postać
-\[ {\begin{cases}{\frac {\partial {}^{2}}{\partial t^{2}}}u-c^{2}\cdot \triangle _{x}u=0,&u:\mathbb {R} ^{3}\times \mathbb {R} _{+}\to {}\mathbb {R} \\u(x,0)=f(x),&f:\mathbb {R} ^{3}\to \mathbb {R} \\[2pt]{\frac {\partial {}}{\partial t}}u(x,0)=g(x),&g:\mathbb {R} ^{3}\to \mathbb {R} \end{cases}} \]
+\[ {\begin{cases}{\frac {\partial {}^{2}}{\partial t^{2}}}u-c^{2}\cdot \triangle _{x}u=0,&u:\mathbb {R} ^{3}\times \mathbb {R} _{+}\to {}\mathbb {R} \\u(x,0)=f(x),&f:\mathbb {R} ^{3}\to \mathbb {R} \\{[2pt]}{\frac {\partial {}}{\partial t}}u(x,0)=g(x),&g:\mathbb {R} ^{3}\to \mathbb {R} \end{cases}} \]
 
 Rozwiązanie równania można wyprowadzić za pomocą średnich sferycznych. 
 $$ 4\pi {}c^{2}{}\cdot {}u(x,t)={\frac {\partial }{\partial t}}\left({\frac {1}{t}}\int \limits _{S^{2}(x,ct)}{f(z)d\sigma (z)}\right)+{\frac {1}{t}}\int \limits _{S^{2}(x,ct)}{g(z)d\sigma (z)} $$
