@@ -1,5 +1,6 @@
 {% extends 'SkradzioneWzoryWeb/main.html'%}
 {% block content %}
+    <div class='results'>
     {% if math %}
         {% for file, formulas, similarity in math%}
             <p> Plik jest podobny do pliku {{ file }} w {{ similarity }}%. </p>
@@ -9,14 +10,21 @@
                     <th>Wzór z bazy</th>
                     <th>% podobieństwa</th>
                 </tr>
-                    {% for row in formulas %}
+                    <!--{% for row in formulas %}
                         <tr>
                             {% for element in row %}
                                 <td> {{ element }} </td>
                             {% endfor %}
                         </tr>
+                    {% endfor %}-->
+                    {% for formula1, formula2, percent in formulas %}
+                        <tr>
+                            <td> {{formula1}}</td>
+                            <td> <img src={{formula2}}/></td>
+                            <td>{{percent}}</td>
                     {% endfor %}
             </table>
         {% endfor %}
     {% endif %}
+    </div>
 {% endblock %}

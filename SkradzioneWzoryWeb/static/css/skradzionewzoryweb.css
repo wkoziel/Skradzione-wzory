@@ -236,6 +236,10 @@ button{
 
 
 /* Results */
+.results {
+    background-color: white;
+}
+
 .comparison {
     border-collapse: collapse;
 }
