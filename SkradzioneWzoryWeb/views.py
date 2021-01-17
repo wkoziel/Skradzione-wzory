@@ -10,13 +10,19 @@ from .alogrythm import *
 def run_algorithms(request):
     if request.method == 'POST':
         uploaded_file = request.FILES['document']
+        #similar_file = {}
+        #formulas = {}
 
         if uploaded_file.name.endswith(".tex"):
             context = alghoritm(uploaded_file.read().decode())
-
+            #for i in range(len(context)):
+                #similar_file[(context[i])[0]] = (context[i])[2]
+                #formulas[(context[i])[0]] = (context[i])[1]
+        
         else:
             context = "Nie udało się załadować pliku.\n Upewnij się że plik ma rozszerzenie .tex"
 
+        #return render(request, 'SkradzioneWzoryWeb/result.html', {'home': False, 'run': True, 'about': False, 'math': context, 'similar_files': similar_file, 'formulas': formulas})
         return render(request, 'SkradzioneWzoryWeb/result.html', {'home': False, 'run': True, 'about': False, 'math': context})
 
     return render(request, 'SkradzioneWzoryWeb/run.html', {'home': False, 'run': True, 'about': False})

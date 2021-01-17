@@ -1,6 +1,22 @@
 {% extends 'SkradzioneWzoryWeb/main.html'%}
 {% block content %}
     {% if math %}
-        <p>{{ math }}</p>
+        {% for file, formulas, similarity in math%}
+            <p> Plik jest podobny do pliku {{ file }} w {{ similarity }}%. </p>
+            <table class='comparison'>
+                <tr>
+                    <th>Wzór porównywany</th>
+                    <th>Wzór z bazy</th>
+                    <th>% podobieństwa</th>
+                </tr>
+                    {% for row in formulas %}
+                        <tr>
+                            {% for element in row %}
+                                <td> {{ element }} </td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+            </table>
+        {% endfor %}
     {% endif %}
 {% endblock %}

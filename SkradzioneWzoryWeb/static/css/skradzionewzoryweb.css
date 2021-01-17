@@ -232,6 +232,19 @@ button{
     color: #ddd;
 }
 
+/* Results */
+.comparison {
+    border-collapse: collapse;
+}
+
+.comparison td, .comparison th {
+    border: 1px solid #479761;
+    color: #b19f9e;
+    text-align: center;
+    font-size: 20px;
+    padding: 5px;
+}
+
 @media screen and (max-width: 1250px) {
     .narzedzia-jezyki img {
          width: 140px;
