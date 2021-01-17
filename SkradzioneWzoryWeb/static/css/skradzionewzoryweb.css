@@ -108,16 +108,16 @@ button{
     display: flex;
     justify-content: space-around;
     margin-top: 15px;
-    
+
 }
 
 .oficjalna-strona{
     text-align: center;
     margin-top: 30px;
-    
+
 }
 
-  
+
 .flex-zakladki > a, .flex-plagiat > a{
     background-color:rgb(36, 36, 36);
     border-radius: 16px;
@@ -140,7 +140,7 @@ button{
     margin-bottom: 35px;
     /* margin-left: 40px; */
 }
-  
+
 .flex-podpisy > div, .plagiat-podpisy > div {
     color: white;
     margin-bottom: 15px;
@@ -217,7 +217,7 @@ button{
     margin-left: 10px;
     margin-top: 30px;
     margin-bottom: 10px;
-    
+
 }
 
 .narzedzia-opisy a{
@@ -236,12 +236,15 @@ button{
 
 
 /* Results */
-.results {
+/* .results {
     background-color: white;
-}
+} */
 
 .comparison {
     border-collapse: collapse;
+    background-color: white;
+    margin: auto;
+    text-align: center;
 }
 
 .comparison td, .comparison th {
@@ -259,4 +262,4 @@ button{
     .plagiat-podpisy > div{
         margin-left: 40px;
     }
-} 
+}

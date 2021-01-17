@@ -14,11 +14,12 @@ def run_algorithms(request):
         #formulas = {}
 
         if uploaded_file.name.endswith(".tex"):
+
             context = alghoritm(uploaded_file.read().decode())
             #for i in range(len(context)):
                 #similar_file[(context[i])[0]] = (context[i])[2]
                 #formulas[(context[i])[0]] = (context[i])[1]
-        
+
         else:
             context = "Nie udało się załadować pliku.\n Upewnij się że plik ma rozszerzenie .tex"
 

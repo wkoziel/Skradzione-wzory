@@ -96,14 +96,14 @@ def compare_hashes(loaded_file_data):
 
             for j in math_to_compare:
                 diff = i[1] - j[1]
-                if diff < 10:
+                if diff < 8:
                     matches += 1
-                    sim = 100 - diff
+                    sim = 100 - 2 * diff
                     match_data.append([i[0], base+j[0], sim])
                     break
         is_enaugh = len(loaded_file_data) / 2
         if match_data and matches > is_enaugh:
-            similarity = matches / len(loaded_file_data) * 100
+            similarity = int(matches / len(loaded_file_data) * 100)
             results.append([file, match_data, similarity])
     return results
 
