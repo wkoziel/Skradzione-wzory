@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[MeX,plmath]{polski} 
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+\title{Funkcja Gamma}
+\maketitle
+
+\section*{Wprowadzenie}
+Funkcja gamma (zwana też gammą Eulera) – funkcja specjalna, która rozszerza pojęcie silni na zbiór liczb rzeczywistych i zespolonych. Gdy część rzeczywista liczby zespolonej z jest dodatnia, to całka (całka Eulera): 
+$$ \Gamma (z)=\int \limits _{0}^{+\infty }t^{z-1}\,e^{-t}\,dt $$
+jest zbieżna bezwzględnie. Całkując przez części, można pokazać, że: 
+$$ \Gamma (z+1)=z\cdot \Gamma (z) $$
+
+Drugim sposobem określenia funkcji Gamma (dla dowolnych liczb zespolonych) jest: 
+\[ \Gamma (z)=\lim _{n\rightarrow +\infty }{\frac {n!n^{z}}{z(z+1)(z+2)\ldots (z+n)}}={\frac {1}{z}}\prod _{n=1}^{\infty }{\frac {\left(1+{\frac {1}{n}}\right)^{z}}{1+{\frac {z}{n}}}} \]
+
+Możemy także określić odwrotność funkcji Gamma następująco (gamma to stała Eulera-Mascheroniego): 
+\begin{displaymath}
+{\frac {1}{\Gamma (z)}}=ze^{\gamma z}\prod _{n=1}^{\infty }\left[\left(1+{\frac {z}{n}}\right)e^{-{\frac {z}{n}}}\right]
+\end{displaymath}
+
+Funkcja gamma nie ma miejsc zerowych.
+
+Jest nieciągła w każdym punkcie całkowitym niedodatnim, przyjmując w tych punktach za granice lewostronne i prawostronne przeciwne nieskończoności.
+
+\section*{Własności funkcji Gamma}
+$$ \Gamma (z+1)=z\cdot \Gamma (z) $$
+$$ \Gamma (z)\cdot \Gamma \left(z+ \frac{1}{2}\right) =\frac{\sqrt{\pi }}{2^{2\cdot z\ -1}}\cdot \Gamma (2z) $$
+
+Następujące dwa wzory zachodzą, jeśli mianownik jest niezerowy: 
+\[ \Gamma (z)\cdot \Gamma (1-z)={\frac {\pi }{\sin {\pi z}}} \]
+\[ \Gamma \left(z+{\frac {1}{2}}\right)\cdot \Gamma \left({\frac {1}{2}}-z\right)={\frac {\pi }{\cos {\pi z}}} \]
+
+Wzór iloczynowy Gaussa:
+\begin{displaymath}
+\Gamma (nz)={\frac {n^{nz}}{\sqrt {(2\pi )^{n-1}}}}\cdot \Gamma (z)\cdot \Gamma \left(z+{\frac {1}{n}}\right)\cdot \Gamma \left(z+{\frac {2}{n}}\right)\cdot \ldots \cdot \Gamma \left(z+{\frac {n-1}{n}}\right)
+\end{displaymath}
+
+Dla n całkowitych, dodatkich zachodzi:
+\begin{equation*}
+\Gamma (n+1/p)=\Gamma (1/p){\frac {(pn-(p-1))!^{(p)}}{p^{n}}}
+\end{equation*}
+
+\end{document}

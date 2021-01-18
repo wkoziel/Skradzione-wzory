@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[MeX,plmath]{polski} 
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+\title{Twierdzenie Picarda}
+\maketitle
+
+\section*{Wprowadzenie}
+Twierdzenie Picarda – twierdzenie o istnieniu i jednoznaczności rozwiązań zagadnienia Cauchy’ego. Podawane jest także jako twierdzenie Picarda-Lindelöfa lub twierdzenie Cauchy’ego-Lipschitza. Nazwa twierdzenia ma uhonorować Charlesa Picarda, a w innym wersjach także Ernsta Lindelöfa, Rudolpha Lipschitza i Augustina Cauchy’ego.  
+
+\section*{Twierdzenie}
+Załóżmy, że  $\Omega \subseteq {\mathbb {R} }\times {\mathbb {R} }$ jest obszarem otwartym na płaszczyźnie oraz funkcja \(f\colon \Omega \to {\mathbb {R} }\) jest ciągła na zbiorze omega i spełnia warunek Lipschitza ze względu na drugą zmienną. Tak więc, dla pewnej stałej L mamy, że 
+
+\begin{displaymath}
+	|f(x,y_{1})-f(x,y_{2})|\leq L|y_{1}-y_{2}|
+\end{displaymath}
+
+ilekroć $(x,y_{1}),(x,y_{2})\in \Omega$.
+
+Niech (x0,y0) należy do omegi. Wówczas dla pewnej delty większej od 0, zagadnienie początkowe
+
+\begin{equation*}
+	y'=f(x,y)
+\end{equation*}
+
+\[y(x_{0})=y_{0}\]
+
+ma dokładnie jedno rozwiązanie $y=\varphi (x)$ określone na przedziale \((x_{0}-\delta ,x_{0}+\delta )\).
+
+\section*{Uogólnienie na przestrzenie Banacha}
+Twierdzenie Picarda w naturalny sposób przenosi się na funkcje spełniające lokalny warunek Lipschitza określone na otwartych podzbiorach produktu prostej rzeczywistej i dowolnej przestrzeni Banacha. 
+
+\subsection*{Lokalny warunek Lipschitza}
+
+
+Niech Y będzie przestrzenią unormowaną oraz  $D\subseteq \mathbb {R} \times Y$ będzie zbiorem otwartym. Mówimy, że funkcja f:D→Y spełnia lokalny warunek Lipschitza na zbiorze D wtedy i tylko wtedy, gdy każdy punkt \((x_{0},u_{0})\in D\) ma otoczenie, na którym f spełnia warunek Lipschitza względem drugiej współrzędnej.
+
+\subsection*{Twierdzenie Picarda}
+
+Niech Y będzie przestrzenią Banacha oraz D należące do R × Y będzie zbiorem otwartym. Jeżeli funkcja f:D→Y jest ciągła oraz spełnia lokalny warunek Lipschitza względem drugiej współrzędnej na zbiorze D, to\\
+- każde rozwiązanie równania u'= f(x,u) daje się przedłużyć do rozwiązania globalnego, \\
+- każde rozwiązanie globalne powyższego równania jest funkcją określoną na przedziale otwartym, \\
+- dla każdego punktu (x0, u0) należącego do D istnieje dokładnie jedno rozwiązanie globalne spełniające warunek początkowy u(x0)=u0.
+
+
+
+\section*{Globalne twierdzenie o istnieniu i jednoznaczności rozwiązań}
+
+Korzystając z twierdzenia Picarda można dowieść globalnego twierdzenia o istnieniu i jednoznaczności rozwiązań równań różniczkowych zwyczajnych, znane również jako twierdzenie o istnieniu i jednoznaczności rozwiązania wysyconego. Poza faktem istnienia oraz jedyności rozwiązania opisuje ono również jego zachowanie. 
+
+\end{document}

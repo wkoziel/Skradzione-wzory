@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[MeX,plmath]{polski} 
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+\title{Twierdzenie podstawowe Cauchy’ego}
+\maketitle
+
+\section*{Wstęp}
+Twierdzenie podstawowe Cauchy’ego – twierdzenie analizy zespolonej orzekające, że całka po drodze zamkniętej z funkcji holomorficznej jest równa zero. Twierdzenie to było sformułowane i udowodnione przez Augustina Cauchy’ego, który wyprowadził z niego szereg podstawowych własności funkcji analitycznych.
+
+Twierdzenie to ma wiele nazw: twierdzenie Cauchy’ego o całce krzywoliniowej bądź twierdzenie całkowe Cauchy’ego, ale również twierdzenie Cauchy’ego-Goursata, czy nawet lemat Goursata (nie mylić z lematem Goursata w teorii grup).
+
+
+\section*{Twierdzenie}
+
+Niech $D\subseteq \mathbb {C}$ będzie obszarem jednospójnym na płaszczyźnie zespolonej C ograniczonym przedziałami gładką krzywą zamkniętą C, ponadto f:U → C oznacza funkcję analityczną na obszarze U, dla którego \(D\cup C\subseteq U\).
+Wówczas 
+
+\begin{equation}
+	\oint \limits _{C}f(z)\;\mathrm {d} z=0
+\end{equation}
+
+
+\section*{Wnioski}
+- Jeśli funkcja f(z) jest analityczna w obszarze jednospójnym D oraz a,b należą do D, to dla każdych kawałkami gładkich krzywych C1, C2 łączących a z b mamy
+
+\begin{displaymath}
+	\int _{C_{1}}f(z)\;dz=\int _{C_{2}}f(z)\;dz
+\end{displaymath}
+
+Zatem możemy zdefiniować całkę
+
+\[\int_a^b f(z)\; dz\]
+
+(tzn. nie zależy ona od drogi całkowania).\\
+
+- Dla D,f,a jak powyżej określmy funkcję
+\(\Phi :D\longrightarrow \mathbb {C}\) przez $\Phi (z)=\int _{a}^{z}f(\zeta )\;d\zeta $ \\
+
+Wówczas funkcja fi jest analityczna oraz
+
+\begin{equation}
+	\Phi '(z)=f(z)
+\end{equation}
+
+- Niech f(z) będzie funkcją analityczną w obszarze jednospójnym D z wyjątkiem punktów z1,z2...,zn oraz niech C należy do D będzie kawałkami gładką krzywą Jordana otaczającą wszystkie punkty z1,z2,...,zn (tzn. punkty te leżą we wnętrzu obszaru ograniczonego krzywą C). Wybierzmy liczbę dodatnią r>0, taką że okręgi $K(z_i,r)$ o środku w zi i promieniu r (dla i=1,…,n) nie przecinają się i nie przecinają krzywej. Wówczas
+
+\begin{displaymath}
+	\oint \limits _{C^{+}}f(z)dz=\sum _{i=1}^{n}\oint \limits _{K(z_{i},r)}f(z)dz
+\end{displaymath}
+
+(Całki powyżej są po krzywych skierowanych dodatnio).
+
+\section*{Wzór całkowy Cauchy'ego}
+
+Wzór całkowy Cauchy’ego – istotny wzór analizy zespolonej. Wyraża fakt, że funkcja holomorficzna zdefiniowana na dysku jest całkowicie zdeterminowana przez wartości, które przyjmuje na brzegu tego dysku. 
+
+
+
+\end{document}

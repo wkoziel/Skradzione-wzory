@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[MeX,plmath]{polski} 
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+\title{Funkcje Blasiusa}
+\maketitle
+
+\section*{Wprowadzenie}
+Funkcje Blasiusa – funkcje specjalne występujące w teorii warstwy granicznej. Funkcje te pojawiły się po raz pierwszy w podanym przez Blasiusa klasycznym rozwiązaniu samopodobnym równań Prandtla opisujących przepływ płynu w laminarnej warstwie granicznej (tzw. laminarna warstwa graniczna Balsiusa).
+
+Nazwa funkcji pochodzi od nazwiska niemieckiego fizyka Blasiusa. 
+
+\section*{Funkcja pierwotna Blasiusa}
+Funkcja będąca rozwiązaniem nieliniowego równania różniczkowego Blasiusa: 
+\[ {\frac {d^{3}f(\eta )}{d\eta ^{3}}}+{\frac {1}{2}}f(\eta ){\frac {d^{2}f(\eta )}{d\eta ^{2}}}=0 \]
+spełniająca zarazem warunki brzegowe:
+\[ \left.f(\eta )\right|_{\eta =0}=0 \]
+\[ \left.{\frac {df(\eta )}{d\eta }}\right|_{\eta =0}=0 \]
+\[ \left.{\frac {df(\eta )}{d\eta }}\right|_{\eta \to \infty }=1 \]
+
+Pierwotna funkcja Blasiusa nie wyraża się przez funkcje elementarne. Ze względu na nieliniowość równania różniczkowego Blasiusa jego rozwiązanie uzyskać można korzystając z rozwinięć w szeregi nieskończone, lub też stosując metody numeryczne.
+
+Dla dodatnich wartości argumentu pierwotna funkcja Blasiusa jest regularną, monotonicznie rosnącą funkcją nie posiadającą punktów przegięcia. Posiada natomiast asymptotę ukośną do której zdążają jej wartości jeśli argument zdąża do nieskończoności. 
+
+\section*{Funkcja styczna Blasiusa (pierwsza funkcja Blasiusa}
+Funkcja będąca pierwszą pochodną pierwotnej funkcji Blasiusa, zdefiniowana w sposób: 
+$$ B_{L}(\eta )\;{\stackrel {\mathrm {df} }{=}}\;{\frac {df(\eta )}{d\eta }} $$
+
+Dla dodatnich wartości argumentu styczna funkcja Blasiusa jest regularną, monotonicznie rosnącą funkcją nieposiadającą punktów przegięcia. Funkcja styczna Blasiusa posiada dwie asymptoty. Jedna z nich to asymptota pozioma na wysokości 1, do której dążą wartości funkcji, gdy jej argument zmierza do nieskończoności. Druga asymptota jest asymptotą ukośną o nachyleniu równym pierwszej pochodnej pierwotnej funkcji Blasiusa, gdy jej argument zmierza do zera. Wartości stycznej funkcji Blasiusa zbliżają się do asymptoty ukośnej, gdy jej argument zmierza do zera.
+
+Funkcja styczna Blasiusa opisuje rozkład prędkości u stycznej do nieskończonej płaskiej płyty w laminarnej warstwie granicznej rozwijającej się w pobliżu płyty. Wzór na rozkład prędkości stycznej przyjmuje wówczas postać: 
+\begin{displaymath}
+u=U\,B_{L}^{}(\eta )
+\end{displaymath}
+gdzie U jest prędkością jednorodnego strumienia płynu poza warstwą graniczną równoległego do sztywnej płyty, a eta jest parametrem samopodobieństwa zdefiniowanym jako: 
+$$ \eta \;{\stackrel {\mathrm {df} }{=}}\;y\,{\sqrt {\frac {\varrho \,U}{\mu \,x}}} $$
+
+Rozkład prędkości stycznej u w warstwie granicznej wyraża się więc ostatecznie wzorem: 
+$$ u=UB_{L}\left(y{\sqrt {\frac {\varrho \,U}{\mu \,x}}}\right) $$
+
+\section*{Funkcja normalna Blasiusa (druga funkcja Blasiusa}
+Funkcja zdefiniowana przy pomocy pierwotnej funkcji Blasiusa w sposób: 
+\begin{equation*}
+B_{N}(\eta )\;{\stackrel {\mathrm {df} }{=}}\;{\frac {1}{2}}\left[\eta \,{\frac {df(\eta )}{d\eta }}-f(\eta )\right]
+\end{equation*}
+
+Funkcja normalna Blasiusa jest funkcją regularną, monotonicznie rosnącą. Posiada jeden punkt przegięcia. Dla małych wartości argumentu jest funkcją wklęsłą, przy dużych – wypukłą.
+
+Przy pomocy funkcji normalnej Blasiusa wyrazić można rozkład prędkości v normalnej (tj. prostopadłej) do nieskończonej płaskiej płyty w laminarnej warstwie granicznej rozwijającej się w pobliżu płyty. Wzór na rozkład prędkości normalnej przyjmuje wówczas postać: 
+\begin{equation*}
+v={\sqrt {\frac {\mu \,U}{\varrho \,x}}}\,B_{N}^{}\left(y\,{\sqrt {\frac {\varrho \,U}{\mu \,x}}}\right)
+\end{equation*}
+
+\end{document}

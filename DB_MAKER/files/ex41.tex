@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[MeX,plmath]{polski} 
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+\title{Twierdzenie Phragména-Lindelöfa}
+\maketitle
+
+\section*{Twierdzenie}
+Twierdzenie Phragména-Lindelöfa – niech dana będzie funkcja ciągła f(z) o argumentach zespolonych oraz ograniczona dla argumentów zawartych w przedziale \(\alpha \leq a\leq \beta\) i holomorficzna wewnątrz tegoż przedziału. Jeśli dla a = alfa i a = beta istnieje takie M, że zachodzi
+
+\[\forall _{z\in <\alpha ,\beta >}\colon |f(z)|\leq M\]
+
+Jeżeli ponadto $\exists _{q\in <\alpha ,\beta >}\colon |f(q)|\ =\ M$ to f jest funkcją stałą.
+
+\section*{Dowód}
+Załóżmy, że $f(a\ +\ b\cdot i)\to 0$ jednostajnie dla b dążącego do +- nieskończoności dla z należącego do alfa,beta. Niech
+
+\begin{displaymath}
+	q\ =\ a_{q}\ +\ b_{q}\cdot i\in <\alpha ,\beta >
+\end{displaymath}
+
+Wtedy
+
+\begin{equation*}
+	\exists _{m>|b_{q}|}\forall _{|b|\geq m}\exists _{a\in <\alpha ,\beta >}\colon |f(a\ +\ b\cdot i)|\leq M
+\end{equation*}
+
+Niech P będzie wnętrzem prostokąta wyznaczonego przez zbiór:
+
+\[Pr\ =\ \{a\ +\ b\cdot i\ :\ \alpha \leq a\leq \beta \ \land \ -m\leq b\leq m\}\]
+
+Jeżeli funkcja f jest stała, to twierdzenie jest w oczywisty sposób prawdziwe. W przeciwnym przypadku f nie jest stała w alfa, beta, wtedy nie może być stała w P, i na podstawie zasady maksimum f nie osiąga kresu górnego w P. Ponieważ |f(z)| jest ciągła w Pr, to |f(z)| osiąga swój kres górny w Pr. Punkt w którym osiąga ona swój kres górny, nie może należeć do P, a ponieważ |f(z)| jest mniejsze lub równe od M na bokach prostokąta Pr, więc |f(z)| jest mniejsze od M w P, w szczególności |f(q)| jest mniejsze od M.
+
+Niech:
+
+\begin{equation}
+	f_{n}(z)\ =\ f(z)\cdot \exp ^{z^{\frac {2}{n}}}\ =\ f(z)\cdot \exp ^{\frac {a^{2}+b^{2}}{n}}\cdot \exp ^{\frac {2\cdot i\cdot a\cdot b}{n}}
+\end{equation}
+
+dla n = 1,2,... \\
+
+będzie funkcją. Jest ona ciągła oraz ograniczona i holomorficzna w alfa, beta. Dodatkowo dla x = alfa i x = beta zachodzi: 
+
+\begin{displaymath}
+	|f_{n}(z)|\ =\ |f(z)|\cdot \exp ^{\frac {a^{2}+b^{2}}{n}}\leq |f(z)|\cdot \exp ^{\frac {\delta ^{2}}{n}}
+\end{displaymath}
+
+dla \(\delta \ =\ \max(|\alpha |,|\beta |)\)
+
+
+\end{document}

@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[MeX,plmath]{polski} 
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+\title{Twierdzenie Gaussa-Lucasa}
+\maketitle
+
+\section*{Wprowadzenie}
+Twierdzenie Gaussa-Lucasa podaje geometryczną zależność pomiędzy zespolonymi zerami wielomianu p(z) a zerami jego pochodnej p'(z) na płaszczyźnie zespolonej C. Stwierdza ono, że miejsca zerowe pochodnej wielomianu leżą w otoczce wypukłej zbioru zer wyjściowego wielomianu. Ponieważ niezerowy wielomian posiada skończoną liczbę miejsc zerowych, więc otoczka wypukła jego zer jest najmniejszym wypukłym wielokątem na płaszczyźnie zawierającym te zera.
+
+W pewnym stopniu twierdzenie to jest podobne do twierdzenia Rolle’a z rachunku różniczkowego funkcji jednej zmiennej, z którego wynika, że pomiędzy dwoma zerami funkcji różniczkowalnej istnieje zero jej pochodnej. Jednak twierdzenie Rolle’a dotyczy dowolnej funkcji różniczkowalnej (wielomiany rzeczywiste są tylko szczególnym przypadkiem), ale z drugiej strony geometria twierdzenie Rolle’a jest bardzo elementarna, gdyż dotyczy ona jednowymiarowej linii prostej R, podczas gdy twierdzenie Gaussa-Lucasa opisuje rozmieszczenie zer na dwuwymiarowej płaszczyźnie.  
+
+\section*{Formalna wypowiedź}
+
+Jeżeli p jest różnym od stałej wielomianem o współczynnikach zespolonych, to wszystkie zera wielomianu p' należą do wypukłej otoczki zbioru zer wielomianu p.
+
+\section*{Dowód}
+Dowód tego twierdzenia jest stosunkowo prosty i opiera się przede wszystkim na zasadniczym twierdzeniu algebry. Z twierdzenia tego wiemy, że każdy wielomian zespolony można rozłożyć na czynniki pierwsze postaci z - zk, gdzie zk to pierwiastki wielomianu. Niech więc p(z) będzie wielomianem stopnia n większe lub równe 1, którego pierwiastki (niekoniecznie różne) to $ z_{1},\dots ,z_{n}\in \mathbb {C}$. Zatem mamy 
+
+\begin{displaymath}
+	p(z)=a_{n}(z-z_{1})(z-z_{2})\ldots (z-z_{n})
+\end{displaymath}
+
+gdzie \(a_{n}\neq 0\) jest współczynnikiem wielomianu przy najwyższej potędze z do n. Policzmy teraz pochodną wielomianu tak zapisanego: 
+
+\begin{equation*}
+	p'(z)=a_{n}((z-z_{2})\ldots (z-z_{n})+(z-z_{1})(z-z_{3})\ldots (z-z_{n})+\ldots +(z-z_{1})(z-z_{2})\ldots (z-z_{n-1}))
+\end{equation*}
+
+i podzielmy p'(z) przez p(z), co daje
+
+\[{\frac {p'(z)}{p(z)}}=\sum _{k=1}^{n}{\frac {1}{z-z_{k}}}\]
+
+Niech w należące do C będzie dowolnym pierwiastkiem pochodnej: p'(w)=0. Jeżeli w należy do {z1,…,zn}, to nie ma czego dowodzić, gdyż oczywiście wtedy w należy do otoczki wypukłej zbioru {z1,…,zn}. Niech więc w jest różne od {z1,...,zn}, to z powyższej równości otrzymamy 
+
+
+\begin{equation}
+	\sum _{k=1}^{n}{\frac {1}{w-z_{k}}}=0
+\end{equation}
+
+co po skorzystaniu z elementarnej tożsamości \(z^{-1}={\overline {z}}/|z|^{2}\) daje
+
+\begin{displaymath}
+	\sum _{k=1}^{n}{\frac {{\overline {w}}-{\overline {z_{k}}}}{\vert w-z_{k}\vert ^{2}}}=0
+\end{displaymath}
+
+Biorąc teraz sprzężenie zespolone obu stron, otrzymamy 
+
+\begin{equation*}
+	\left(\sum _{k=1}^{n}{\frac {1}{\vert w-z_{k}\vert ^{2}}}\right)w=\sum _{k=1}^{n}{\frac {1}{\vert w-z_{k}\vert ^{2}}}z_{k}
+\end{equation*}
+
+Oznaczając
+
+\begin{equation}
+	t_{k}=\left({\frac {1}{\vert w-z_{k}\vert ^{2}}}\right)/\left(\sum _{j=1}^{n}{\frac {1}{\vert w-z_{j}\vert ^{2}}}\right)
+\end{equation}
+
+
+
+\end{document}

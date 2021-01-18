@@ -58,7 +58,7 @@ def main():
         j = 1
         for i in math:
             print(i)
-            preview("$$"+i+"$$", viewer='file', filename="database/"+ name + "/" + str(j) + '.png')
+            preview("$$"+i+"$$", viewer='file', filename="database/"+ name + "/" + str(j) + '.png', packages=("polski", "inputenc"), euler=False)
             j+=1
 
 main()

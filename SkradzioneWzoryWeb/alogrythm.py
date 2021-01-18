@@ -54,7 +54,7 @@ def create_list_of_hashes(math):
     for i in math:
         print("Przetwarzane: "+i)
         byteImgIO = BytesIO()
-        preview(r'$$' + i + '$$', output='png', viewer='BytesIO', outputbuffer=byteImgIO)
+        preview(r'$$' + i + '$$', output='png', viewer='BytesIO', outputbuffer=byteImgIO, packages=("polski", "inputenc"), euler=False)
         img = Image.open(byteImgIO)
         hash = imagehash.average_hash(img)
         math_hash.append(hash)
