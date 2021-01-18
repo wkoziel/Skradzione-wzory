@@ -9,21 +9,26 @@ from .alogrythm import *
 
 def run_algorithms(request):
     if request.method == 'POST':
-        uploaded_file = request.FILES['document']
-        similarity = False
+        try:
+            uploaded_file = request.FILES['document']
+            similarity = False
 
-        if uploaded_file.name.endswith(".tex"):
+            if uploaded_file.name.endswith(".tex"):
 
-            context = alghoritm(uploaded_file.read().decode())
-            if len(context) == 0:
-                context = "Nie znaleziono podobnych plików w bazie danych."
+                context = alghoritm(uploaded_file.read().decode())
+                if len(context) == 0:
+                    context = "Nie znaleziono podobnych plików w bazie danych."
+                else:
+                    similarity = True
+
             else:
-                similarity = True
+                text = "Nie udało się załadować pliku.\n Upewnij się że plik ma rozszerzenie .tex"
+                return render(request, 'SkradzioneWzoryWeb/run.html', {'home': False, 'run': True, 'about': False, 'text': text})
 
-        else:
-            context = "Nie udało się załadować pliku.\n Upewnij się że plik ma rozszerzenie .tex"
-
-        return render(request, 'SkradzioneWzoryWeb/result.html', {'home': False, 'run': True, 'about': False, 'math': context, 'similarity': similarity})
+            return render(request, 'SkradzioneWzoryWeb/result.html', {'home': False, 'run': True, 'about': False, 'math': context, 'similarity': similarity})
+        except:
+            text = "Nie wybrano pliku."
+            return render(request, 'SkradzioneWzoryWeb/run.html', {'home': False, 'run': True, 'about': False, 'text': text})
 
     return render(request, 'SkradzioneWzoryWeb/run.html', {'home': False, 'run': True, 'about': False})
 

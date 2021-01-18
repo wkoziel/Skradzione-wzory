@@ -14,5 +14,8 @@
     {% comment %} <h2>
         {{ instance.list_all_files_to_compare }}
     </h2> {% endcomment %}
+    {% if text %}
+        <p class='info'>{{ text }}</p>
+    {% endif %}
 </div>
 {% endblock %}
