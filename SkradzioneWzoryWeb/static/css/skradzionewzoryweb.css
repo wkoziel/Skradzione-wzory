@@ -236,8 +236,8 @@ button{
 
 
 /* Results */
-/* .results {
-    background-color: white;
+/*.results {
+    width: 90%;
 } */
 
 .comparison {
@@ -249,11 +249,21 @@ button{
 
 .comparison td, .comparison th {
     border: 1px solid #479761;
-    color: #b19f9e;
+    color:black;
     text-align: center;
-    font-size: 20px;
+    font-size: 15px;
     padding: 5px;
 }
+
+.comparison th {
+    color: #b19f9e;
+    padding: 20px;
+}
+
+.formula {
+    width: 25%;
+}
+
 
 @media screen and (max-width: 900px) {
     .narzedzia-opisy a{
