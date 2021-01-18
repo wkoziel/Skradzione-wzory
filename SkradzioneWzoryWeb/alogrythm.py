@@ -5,8 +5,6 @@ from sympy import preview
 import imagehash
 import requests
 
-
-
 def cut_out_math(data):
     """Wycina wzory z pliku"""
     data = " ".join(data.split())
@@ -62,7 +60,7 @@ def create_list_of_hashes(math):
 
 def get_file_from_database(path):
     """Zamienia zdjęcie z bazy na hash"""
-    base = "http://127.0.0.1:8000/static/database/"
+    base = "http://skradzionewzory.pythonanywhere.com/static/database/"
     url = base + path
     print("Otwieram:"+url)
     response = requests.get(url)
@@ -85,7 +83,7 @@ def compare_hashes(loaded_file_data):
     for i in range(1,51):
         files.append("ex"+str(i))
 
-    base = "http://127.0.0.1:8000/static/database/"
+    base = "http://skradzionewzory.pythonanywhere.com/static/database/"
 
     results = []
     for file in files:
