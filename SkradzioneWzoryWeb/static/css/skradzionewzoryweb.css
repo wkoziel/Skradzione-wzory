@@ -1,6 +1,14 @@
-html {
+body, html {
+    position: absolute;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
     background-color: #19181a;
-    width: 75%;
+    width: 90%;
+    height: 100%;
     margin: auto;
 }
 p {
@@ -95,10 +103,12 @@ button{
     border: 1px solid #333;
     border-radius: 16px;
     padding: 10px;
+    margin: 10px 0 10px 0;
     background-color: #333;
 }
 .footer{
     color: white;
+    padding: 3px;
     text-align: center;
     background-color: #479761;
 }
@@ -108,7 +118,7 @@ button{
     display: flex;
     justify-content: space-around;
     margin-top: 15px;
-
+    margin-bottom: 15px;
 }
 
 .oficjalna-strona{
