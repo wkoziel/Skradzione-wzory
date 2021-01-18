@@ -82,7 +82,7 @@ def compare_hashes(loaded_file_data):
     """Metoda porównująca zawartość bazy i plik źródłowy"""
     #Zestaw folderów z bazy danych
     files = []
-    for i in range(1,29):
+    for i in range(1,51):
         files.append("ex"+str(i))
 
     base = "http://127.0.0.1:8000/static/database/"

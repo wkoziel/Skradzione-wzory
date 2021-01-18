@@ -246,15 +246,17 @@ button{
 
 
 /* Results */
-/*.results {
-    width: 90%;
-} */
+.results {
+    max-width: 100%;
+}
 
 .comparison {
     border-collapse: collapse;
     background-color: white;
     margin: auto;
     text-align: center;
+    table-layout: fixed;
+    width: 98%;
 }
 
 .comparison td, .comparison th {
@@ -270,10 +272,27 @@ button{
     padding: 20px;
 }
 
+.comparison td{
+    overflow-x: auto;
+}​
+
 .formula {
     width: 25%;
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
 
 @media screen and (max-width: 900px) {
     .narzedzia-opisy a{
