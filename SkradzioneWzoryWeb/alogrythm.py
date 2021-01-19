@@ -60,7 +60,8 @@ def create_list_of_hashes(math):
 
 def get_file_from_database(path):
     """Zamienia zdjęcie z bazy na hash"""
-    base = "http://skradzionewzory.pythonanywhere.com/static/database/"
+    #base = "http://skradzionewzory.pythonanywhere.com/static/database/"
+    base = "http://127.0.0.1:8000/static/database/"
     url = base + path
     print("Otwieram:"+url)
     response = requests.get(url)
@@ -83,7 +84,8 @@ def compare_hashes(loaded_file_data):
     for i in range(1,51):
         files.append("ex"+str(i))
 
-    base = "http://skradzionewzory.pythonanywhere.com/static/database/"
+    #base = "http://skradzionewzory.pythonanywhere.com/static/database/"
+    base = "http://127.0.0.1:8000/static/database/"
 
     results = []
     for file in files:

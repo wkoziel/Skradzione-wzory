@@ -14,12 +14,15 @@ def run_algorithms(request):
             similarity = False
 
             if uploaded_file.name.endswith(".tex"):
-
-                context = alghoritm(uploaded_file.read().decode())
-                if len(context) == 0:
-                    context = "Nie znaleziono podobnych plików w bazie danych."
-                else:
-                    similarity = True
+                try:
+                    context = alghoritm(uploaded_file.read().decode())
+                    if len(context) == 0:
+                        context = "Nie znaleziono podobnych plików w bazie danych."
+                    else:
+                        similarity = True
+                except:
+                    text = "W pliku znalazły się nieoczekiwane znaki."
+                    return render(request, 'SkradzioneWzoryWeb/run.html', {'home': False, 'run': True, 'about': False, 'text': text})
 
             else:
                 text = "Nie udało się załadować pliku.\n Upewnij się że plik ma rozszerzenie .tex"
