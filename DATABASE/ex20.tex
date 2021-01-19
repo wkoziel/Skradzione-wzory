@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[MeX,plmath]{polski} 
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+\title{Wzór Stirlinga}
+\maketitle
+
+\section*{Wprowadzenie}
+
+Wzór Stirlinga – wzór pozwalający obliczyć w przybliżeniu wartość silni. 
+\[ n!\approx \bigg(\frac{n}{e}\bigg)^n\sqrt{2\pi n} \]
+
+Wzór ten daje dobre przybliżenie dla dużych liczb n. 
+
+Formalnie: \( \lim _{n\to \infty }{\frac {n!}{{\sqrt {2\pi n}}\;\left({\frac {n}{e}}\right)^{n}}}=1 \).
+
+Przybliżona, często używana postać logarytmiczna: $ \ln n!\approx n\ln n-n $
+
+\section*{Wyprowadzenie}
+
+Wzór, wraz z precyzyjnym oszacowaniem błędu, może być wyprowadzony następująco. Zamiast przybliżać n!, weźmy logarytm naturalny 
+$$ \ln n!=\ln 1+\ln 2+\ldots +\ln n $$
+
+Następnie, aby znaleźć przybliżenie wartości ln(n!), stosujemy wzór Eulera-Maclaurina:
+\begin{displaymath}
+\ln(n)!=n\ln n-n+1-{\frac {\ln n}{2}}+\sum _{k=2}^{m}{\frac {B_{k}{(-1)}^{k}}{k(k-1)}}\,\cdot \,\left({\frac {1}{n^{k-1}}}-1\right)+R
+\end{displaymath}
+
+Dalej z obu stron bierzemy granicę,
+\begin{equation*}
+\lim _{n\to \infty }\left(\ln n!-n\ln n+n-{\frac {\ln n}{2}}\right)=1+\sum _{k=2}^{m}{\frac {B_{k}{(-1)}^{k}}{k(k-1)}}+\lim _{n\to \infty }R
+\end{equation*}
+
+Niech y  równa się powyższej granicy. Łącząc powyższe dwa wzory, dostajemy wzór przybliżony w postaci logarytmicznej: 
+\[ \ln n!=\left(n+{\frac {1}{2}}\right)\ln n-n+y+\sum _{k=2}^{m}{\frac {B_{k}{(-1)}^{k}}{k(k-1)n^{k-1}}}+O\left({\frac {1}{n^{m}}}\right) \]
+gdzie O(-) to notacja dużego O.
+
+Niech obie strony równania będą wykładnikami funkcji wykładniczej oraz wybierzmy jakąś konkretną dodatnią liczbę całkowitą, np. 1.
+\begin{displaymath}
+n!=e^{y}{\sqrt {n}}\ \left({\frac {n}{e}}\right)^{n}\left(1+O\left({\frac {1}{n}}\right)\right)
+\end{displaymath}
+
+Nieznany wyraz może być wyznaczony poprzez wzięcie granicy po obu stronach przy n dążącym do nieskończoności oraz używając iloczynu Wallisa. Otrzymujemy wzór Stirlinga: 
+$$ n!={\sqrt {2\pi n}}\ \left({\frac {n}{e}}\right)^{n}\left(1+O\left({\frac {1}{n}}\right)\right) $$
+
+Wzór może być również wyprowadzony poprzez wielokrotne całkowanie przez części. Wyraz wiodący może być znaleziony poprzez metodę największego spadku. 
+
+\section*{Historia}
+Wzór został odkryty przez Abrahama de Moivre w postaci 
+\[ n!\sim c\cdot n^{n+1/2}e^{-n},\quad c=\operatorname {const} \]
+
+Przybliżenie Stirlinga ,,pierwszego rzędu'', n! = nn, zostało użyte przez Maxa Plancka w jego artykule z roku 1901, w którym wyprowadził on wzór na promieniowanie ciała doskonale czarnego. Przybliżenie to powiązało zaproponowaną przez Plancka koncepcję elementów energii z wzorem na promieniowanie ciała doskonale czarnego. Przybliżenie było później często używane w teorii kwantowej, na przykład przez Louis de Broglie’a. Dla bardzo dużych n wykres przybliżenia ,,pierwszego rzędu'' wzoru Stirlinga, zrobiony w skali logarytmicznej, jest prawie równoległy do linii otrzymanej z koncepcji odseparowanych od siebie kwantów światła.
+
+Jednak entropia układu, obliczona przy zastosowaniu przybliżenia Stirlinga ,,pierwszego rzędu'', jest inna, przy czym stosunek tych wielkości staje się silnie nieliniowy dla małych n. Można tylko spekulować, że podobny wpływ na entropię systemu mogłoby mieć wprowadzenie do opisu zasady nieoznaczoności, spinu fotonu i innych wielkości fizycznych nieznanych w czasie, gdy powstawała stara teoria kwantowa. Niestety, do chwili obecnej brak jest doświadczalnej weryfikacji związków między użytym przez Plancka przybliżeniem Stirlinga ,,pierwszego rzędu'' i najnowszymi teoriami fizycznymi. 
+
+\end{document}

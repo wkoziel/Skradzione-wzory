@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[MeX,plmath]{polski} 
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+\title{Szereg Fouriera}
+\maketitle
+
+\section*{Wprowadzenie}
+Szereg Fouriera – szereg pozwalający rozłożyć funkcję okresową, spełniającą warunki Dirichleta, na sumę funkcji trygonometrycznych. Nauka na temat szeregów Fouriera jest gałęzią analizy Fouriera. Szeregi Fouriera zostały wprowadzone w 1807 roku przez Josepha Fouriera w celu rozwiązania równania ciepła dla metalowej płyty. Doprowadziło to jednak do przewrotu w matematyce i wprowadzenia wielu nowych teorii. Dziś mają one wielkie znaczenie między innymi w fizyce, teorii drgań oraz przetwarzaniu sygnałów obrazu (kompresja jpeg) i dźwięku (kompresja mp3).
+
+\section*{Definicja}
+Niech dana będzie funkcja okresowa \( f\colon \mathbb {R} \to \mathbb {R} \)  o okresie \( T\in \mathbb {R} ^{+} \), bezwzględnie całkowalna w przedziale \( \left[{\frac {-T}{2}},{\frac {T}{2}}\right] \).
+Trygonometrycznym szeregiem Fouriera funkcji f nazywamy szereg funkcyjny następującej postaci: 
+\[ S(x)={\frac {a_{0}}{2}}+\sum _{n=1}^{\infty }\left(a_{n}\cos \left({\frac {2n\pi }{T}}x\right)+b_{n}\sin \left({\frac {2n\pi }{T}}x\right)\right) \]
+o współczynnikach określonych następującymi wzorami: 
+\[ a_{n}={\frac {2}{T}}\int \limits _{-{\frac {T}{2}}}^{\frac {T}{2}}f(x)\cos \left({\frac {2n\pi }{T}}x\right)dx,\quad n=0,1,2,\dots \]
+\[ b_{n}={\frac {2}{T}}\int \limits _{-{\frac {T}{2}}}^{\frac {T}{2}}f(x)\sin \left({\frac {2n\pi }{T}}x\right)dx,\quad n=1,2,3,\dots \]
+
+Powyższe wzory po raz pierwszy ujrzały światło dzienne w pracach Jeana-Baptiste Josepha Fouriera. Niemniej jednak po raz pierwszy wyprowadził je Leonhard Euler (prac na ten temat nie opublikował). Z tego względu wzory te noszą nazwę wzorów Eulera-Fouriera. 
+
+W fizyce i technice często spotykane jest następujące oznaczenie (T oznacza okres funkcji) $ \omega ={\frac {2\pi }{T}} $. Nosi to nazwę pulsacji lub częstości kołowej. Przy zastosowaniu takiego oznaczenia powyższe wzory przyjmują postać: 
+\begin{equation*}
+S(x)={\frac {a_{0}}{2}}+\sum _{n=1}^{\infty }\left(a_{n}\cos \left(n\omega x\right)+b_{n}\sin \left(n\omega x\right)\right)
+\end{equation*}
+\begin{equation*}
+a_{n}={\frac {2}{T}}\int \limits _{-{\frac {T}{2}}}^{\frac {T}{2}}f(x)\cos \left(n\omega x\right)dx,\quad n=0,1,2,\dots
+\end{equation*}
+\begin{equation*}
+b_{n}={\frac {2}{T}}\int \limits _{-{\frac {T}{2}}}^{\frac {T}{2}}f(x)\sin \left(n\omega x\right)dx,\quad n=1,2,3,\dots
+\end{equation*}
+
+\end{document}

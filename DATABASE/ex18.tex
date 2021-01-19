@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[MeX,plmath]{polski} 
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+\title{Rozkład normalny}
+\maketitle
+
+\section*{Wprowadzenie}
+Rozkład normalny, rozkład Gaussa (w literaturze francuskiej zwany rozkładem Laplace’a-Gaussa) – jeden z najważniejszych rozkładów prawdopodobieństwa, odgrywający ważną rolę w statystyce. Wykres funkcji prawdopodobieństwa tego rozkładu jest krzywą w kształcie dzwonu (tak zwaną krzywą dzwonową).
+
+Przyczyną jego znaczenia jest częstość występowania w naturze. Jeśli jakaś wielkość jest sumą lub średnią bardzo wielu drobnych losowych czynników, to niezależnie od rozkładu każdego z tych czynników jej rozkład będzie zbliżony do normalnego (centralne twierdzenie graniczne) – dlatego można go bardzo często zaobserwować w danych. Ponadto rozkład normalny ma interesujące właściwości matematyczne, dzięki którym oparte na nim metody statystyczne są proste obliczeniowo. 
+
+\section*{Definicja rozkładu normalnego}
+Istnieje wiele równoważnych sposobów zdefiniowania rozkładu normalnego. Należą do nich: funkcja gęstości, dystrybuanta, momenty, kumulanty, funkcja charakterystyczna, funkcja tworząca momenty i funkcja tworząca kumulanty. Wszystkie kumulanty rozkładu normalnego wynoszą 0 oprócz pierwszych dwóch. 
+\subsection*{Funkcja gęstości}
+Funkcja gęstości prawdopodobieństwa rozkładu normalnego jest przykładem funkcji Gaussa. Dana jest ona wzorem: 
+$$ f_{\mu ,\sigma }(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}\,\exp \left({\frac {-(x-\mu )^{2}}{2\sigma ^{2}}}\right) $$
+
+Jeśli \( \mu =0 \) i $ \sigma =1$, to rozkład ten nazywa się standardowym rozkładem normalnym, jego funkcja gęstości opisana jest wzorem: 
+\begin{displaymath}
+\phi _{0,1}(x)=\phi (x)={\frac {1}{\sqrt {2\pi }}}\,\exp \left(-{\frac {x^{2}}{2}}\right)
+\end{displaymath}
+
+\subsection*{Dystrybuanta}
+Dystrybuanta jest definiowana jako prawdopodobieństwo tego, że zmienna X ma wartości mniejsze bądź równe x i w kategoriach funkcji gęstości wyrażana jest (dla rozkładu normalnego) wzorem: 
+\begin{equation*}
+P(X \leq x)=\int \limits _{-\infty }^{x}{\frac {1}{\sigma {\sqrt {2\pi }}}}e^{\frac {-(x-\mu )^{2}}{2\sigma ^{2}}}\,dx
+\end{equation*}
+
+Całki powyższej nie da się obliczyć dokładnie metodą analityczną. W konkretnych zagadnieniach do obliczenia wartości dystrybuanty stosuje się zatem tablice statystyczne (bądź też odpowiednie kalkulatory czy oprogramowanie komputerów)
+\begin{gather*}
+\Phi (z)=\int \limits _{-\infty }^{z}{\frac {1}{\sqrt {2\pi }}}\,e^{-{\frac {t^{2}}{2}}}\,dt
+\end{gather*}
+
+Związek dystrybuanty i dystrybuanty rozkładu normalnego o dowolnie zadanych parametrach otrzymuje się za pomocą standaryzowania rozkładu. 
+$$ P(X\leq x)=\Phi \left({\frac {x-\mu }{\sigma }}\right) $$
+
+Dystrybuanta standardowego rozkładu normalnego może być wyrażona poprzez funkcję specjalną (nieelementarną, przestępną), tzw. funkcję błędu jako: 
+\begin{displaymath}
+\Phi (z)={\frac {1}{2}}\left(1+\operatorname {erf} \,{\frac {z}{\sqrt {2}}}\right)
+\end{displaymath}
+
+\subsection*{Funkcje tworzące}
+Funkcją charakterystyczną rozkładu normalnego jest 
+\begin{equation*}
+\varphi (t)=\exp \left(i\mu t-{\frac {\sigma ^{2}t^{2}}{2}}\right)
+\end{equation*}
+
+W przypadku standardowego rozkładu normalnego ma ona postać:
+$$ \varphi (t)=\exp \left(-{\frac {t^{2}}{2}}\right) $$
+
+\end{document}

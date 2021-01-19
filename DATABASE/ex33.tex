@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[MeX,plmath]{polski} 
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+\title{Twierdzenie Rolle’a}
+\maketitle
+
+\section*{Wprowadzenie}
+Twierdzenie Rolle’a – twierdzenie klasycznej analizy matematycznej mówiące, że funkcja różniczkowalna przyjmująca równe wartości w dwóch różnych punktach ma pomiędzy nimi punkt stacjonarny, tzn. punkt, w którym nachylenie prostej stycznej do wykresu funkcji względem osi OX jest równe zeru.
+
+Twierdzenie to opublikował (dla wielomianów) francuski matematyk Michel Rolle w 1691. W innej postaci znane ono było w 1150 roku hinduskiemu matematykowi Bhaskarze. 
+
+\section*{Wersja standardowa}
+
+Niech f będzie ciągłą funkcją rzeczywistą określoną na przedziale domkniętym [a,b], różniczkowalną na przedziale otwartym (a, b). Wówczas jeżeli f(a) = f(b), to istnieje taki punkt c należący do przedziału otwartego (a, b), że 
+
+\begin{equation}
+	f'(c)=0
+\end{equation}
+
+Z tej wersji twierdzenia Rolle’a korzysta się przy dowodzie twierdzenia Lagrange’a o wartości średniej, którego twierdzenie Rolle’a jest przypadkiem szczególnym. 
+
+\section*{Dowód}
+Jeżeli f = const, to f'(c) = 0 dla każdego c należącego do (a, b). Gdy f nie jest tożsamościowo równa stałej, to istnieje taki punkt x należący do (a, b), dla którego zachodzi 
+
+\begin{displaymath}
+	f(x) > f(a) = f(b)
+\end{displaymath}
+
+lub
+
+\begin{equation*}
+	f(x) < f(a) = f(b)
+\end{equation*}
+
+Przypuśćmy, że zachodzi pierwszy przypadek, tzn. dla pewnego argumentu wartość funkcji jest większa od f(a) = f(b); rozumowanie w drugim przypadku jest analogiczne (wówczas trzeba rozważać wartość najmniejszą zamiast największej).
+
+Określona na przedziale zwartym [a,b] funkcja ciągła f na mocy twierdzenia Weierstrassa przyjmuje wartość największą, tzn. istnieje taki punkt $c \in [a, b]$, że
+
+\[f(c) = \sup f(x)\] 
+
+dla x należącego do [a,b].
+
+Z założenia, że istnieje wartość większa od f(a) = f(b) wynika, że $a \neq c \neq b$ , tzn. c należy do (a, b). Warunkiem koniecznym istnienia ekstremum globalnego funkcji f w c jest znikanie pochodnej w tym punkcie, co dowodzi tezy. 
+
+\section*{Uogólnienia}
+Niech h := b - a będzie rzeczywistą liczbą dodatnią, a x := a, wtedy x + h = b. Punkt c należący do (a,b) można zapisać jako x + 0 h, gdzie 0 należy do (0,1).
+
+Przy takich oznaczeniach twierdzenie Rolle’a ma postać: 
+
+Jeśli
+
+\begin{equation*}
+	 f(x+h)=f(x)
+\end{equation*}
+
+to istnieje punkt x + 0h, dla którego
+
+\[f'(x+\theta h)h=0\]
+
+Rezygnacja z warunku \(f(x)=f(x+h)\), prowadzi do ogólniejszego twierdzenia Lagrange’a:
+
+Istnieje taki punkt x + 0h, który spełnia tożsamość
+
+\begin{equation*}
+	f(x + h) = f(x) + f'(x + \theta h) h
+\end{equation*}
+
+\end{document}

@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[MeX,plmath]{polski} 
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+\title{Trójki pitagorejskie}
+\maketitle
+
+\section*{Wstęp}
+Trójka pitagorejska (albo liczby pitagorejskie) – trzy liczby całkowite dodatnie a,b,c spełniające tzw. równanie Pitagorasa: 
+
+$$a^{2}+b^{2}=c^{2}.$$
+
+Ich nazwa pochodzi od twierdzenia Pitagorasa, na mocy którego boki trójkąta prostokątnego spełniają powyższą zależność. W poniższej tabeli przedstawiono kilka pierwszych (względem krótszej przyprostokątnej) trójek pitagorejskich: 
+
+\begin{center}
+	
+\begin{tabular}{ c c c }
+	a & b & c \\
+	3 & 4 & 5 \\ 
+	5 & 12 & 13 \\  
+	6 & 8 & 10 \\
+	7 & 24 & 25 \\
+	8 & 15 & 17 \\
+	9 & 12 & 15 \\
+	12 & 16 & 20    
+\end{tabular}
+
+\end{center}
+
+
+\section*{Własności}
+Jeżeli trójka (a,b,c) jest pitagorejska, to jest nią też (da,db,dc), dla dowolnej liczby całkowitej dodatniej d. Trójkę pitagorejską nazywamy pierwotną, jeśli a, b i c nie mają wspólnego dzielnika większego od 1. Zatem z każdej trójki pitagorejskiej możemy uzyskać pierwotną przez podzielenie jej przez największy wspólny dzielnik i dowolną trójkę pitagorejską możemy otrzymać z pierwotnej przez pomnożenie jej wszystkich trzech elementów przez odpowiednią tę samą liczbę całkowitą dodatnią. 
+
+Jeśli m większe od n są liczbami całkowitymi dodatnimi, to 
+
+\begin{equation}
+	a=m^{2}-n^{2},
+\end{equation}
+
+\begin{equation*}
+	b=2\cdot m\cdot n,
+\end{equation*}
+
+\begin{displaymath}
+	c=m^{2}+n^{2}
+\end{displaymath}
+
+\section*{Rozwiązanie elementarne}
+Kwadrat nieparzystej liczby naturalnej przy dzieleniu przez 8 daje resztę 1. Zatem suma kwadratów dwóch dowolnych liczb nieparzystych daje resztę 2 z dzielenia przez 8. Z drugiej strony, kwadrat dowolnej liczby naturalnej daje przy dzieleniu przez 8 jedną z reszt 0, 1, 4. Zatem suma dwóch kwadratów nieparzystych liczb naturalnych nigdy nie jest kwadratem.
+
+Niech a,b,c będą liczbami naturalnymi, spełniającymi równanie:
+
+\[a^{2}+b^{2}=c^{2}\]
+
+Zatem co najmniej jedna z liczb a,b, jest parzysta. Przy założeniu, że a,b są względnie pierwsze, jedna z liczb a,b, powiedzmy a, jest nieparzysta, a b jest parzysta. Zatem c jest nieparzysta i względnie pierwsza zarówno z liczbą a, jak i z liczbą b.
+
+Każdy wspólny dzielnik liczb naturalnych (c-a)/2 oraz ( c + a ) / 2 jest też dzielnikiem ich sumy, równej c, oraz ich różnicy, równej a, jest więc równy 1, a liczby ( c - a ) / 2 oraz ( c + a ) / 2 są względnie pierwsze. 
+
+
+
+Równanie (1) ma dokładnie te same rozwiązania (a,b,c), co równanie:
+
+$$ {\frac {c-a}{2}}\cdot {\frac {c+a}{2}}=\left({\frac {b}{2}}\right)^{2} $$
+
+Ponieważ liczby (c-a)/2 oraz (c+a)/2 są względnie pierwsze, to są pełnymi kwadratami pewnych liczb naturalnych m oraz n:
+
+\begin{equation}
+	{\frac {c+a}{2}}=m^{2}
+\end{equation}
+
+skąd:
+
+$$ a=m^{2}-n^{2} $$
+
+$$ b=2\cdot m\cdot n $$
+
+$$ c=m^{2}+n^{2} $$
+
+\end{document}

@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[MeX,plmath]{polski} 
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+\title{Rozkład Studenta}
+\maketitle
+
+\section*{Wprowadzenie}
+Rozkład Studenta (rozkład t lub rozkład t-Studenta) – ciągły rozkład prawdopodobieństwa stosowany często w statystyce w procedurach testowania hipotez statystycznych i przy ocenie niepewności pomiaru. Przy opracowaniu wyników pomiarów często powstaje zagadnienie oszacowania przedziału, w którym leży, z określonym prawdopodobieństwem, rzeczywista wartość mierzona, jeśli dysponujemy tylko wynikami n pomiarów, dla których możemy wyznaczyć takie parametry, jak średnia i odchylenie standardowe lub wariancja, nie znamy natomiast odchylenia standardowego w populacji. Zagadnienie to rozwiązał w 1908 r. William Sealy Gosset (pseudonim Student) podając funkcję zależną od wyników pomiarów, a niezależną od sigmy.
+
+\section*{Definicja}
+Rozkład Studenta z n stopniami swobody jest rozkładem zmiennej losowej T postaci: 
+\[ T={\frac {U}{\sqrt {Z}}}{\sqrt {n}} \]
+
+\section*{Gęstość prawdopodobieństwa}
+Zmienna losowa T określona powyżej ma gęstość prawdopodobieństwa opisaną wzorem: 
+$$ f(t,n)={\frac {\Gamma ({\frac {n+1}{2}})}{\Gamma ({\frac {n}{2}}){\sqrt {n\pi }}}}\left(1+{\frac {t^{2}}{n}}\right)^{-{\frac {n+1}{2}}} $$
+
+Dowód. Gęstość wyraża się wzorem
+\[ f_{Y}(y)={\frac {2^{1-{\frac {n}{2}}}y^{n-1}e^{-{\frac {y^{2}}{2}}}}{\Gamma ({\frac {n}{2}})}} \]
+
+Rozważmy zmienną
+$$ X={\frac  {1}{{\sqrt  {n}}}}Y $$
+
+Wówczas
+$$ {\frac  {\partial Y}{\partial X}}={\sqrt  n} $$
+a zatem całkując przez podstawienie obserwujemy, że 
+\[ {\begin{aligned}f_{X}(x)&=f_{Y}({\sqrt {n}}x){\Big |}{\frac {\partial Y}{\partial X}}{\Big |}\\&={\frac {2^{1-{\frac {n}{2}}}}{\Gamma \left({\frac {n}{2}}\right)}}({\sqrt {n}}x)^{n-1}e^{-{\frac {({\sqrt {n}}x)^{2}}{2}}}{\sqrt {n}}\\&={\frac {2^{1-{\frac {n}{2}}}}{\Gamma \left({\frac {n}{2}}\right)}}n^{\frac {n}{2}}x^{n-1}e^{-{\frac {n}{2}}x^{2}}.\end{aligned}} \]
+
+Zmienna T ma zatem rozkład U/X. Jej gęstość jest więc postaci 
+\begin{displaymath}
+{\begin{aligned}f_{T}(t)&=\int \limits _{-\infty }^{\infty }|x|f_{U}(xt)f_{X}(x)\,\mathrm {d} x=\int \limits _{0}^{\infty }xf_{U}(xt)f_{X}(x)\,\mathrm {d} x\\&=\int \limits _{0}^{\infty }x{\frac {1}{\sqrt {2\pi }}}e^{-{\frac {(xt)^{2}}{2}}}{\frac {2^{1-{\frac {n}{2}}}}{\Gamma \left({\frac {n}{2}}\right)}}n^{\frac {n}{2}}x^{n-1}e^{-{\frac {n}{2}}x^{2}}\,\mathrm {d} x\\&={\frac {n^{\frac {n}{2}}}{\sqrt {2\pi }}}{\frac {2^{1-{\frac {n}{2}}}}{\Gamma \left({\frac {n}{2}}\right)}}\int \limits _{0}^{\infty }x^{n}e^{-{\frac {1}{2}}(n+t^{2})x^{2}}\,\mathrm {d} x.\end{aligned}}
+\end{displaymath}
+
+Powyższa całka przyjmuje postać
+\begin{equation*}
+\int \limits _{0}^{\infty }x^{n}e^{-{\frac {1}{2}}(n+t^{2})m}{\frac {\mathrm {d} m}{2x}}={\frac {1}{2}}\int \limits _{0}^{\infty }m^{\frac {n-1}{2}}e^{-{\frac {1}{2}}(n+t^{2})m}\mathrm {d} m
+\end{equation*}
+
+Oznacza to, że
+$$ k-1={\frac {n-1}{2}}\Rightarrow k^{*}={\frac {n+1}{2}},\qquad {\frac {1}{\theta }}={\frac {1}{2}}(n+t^{2})\Rightarrow \theta ^{*}={\frac {2}{(n+t^{2})}} $$
+
+Ostatecznie
+$$ f_{T}(t)={\frac {1}{\sqrt {2\pi }}}{\frac {2^{1-{\frac {n}{2}}}}{\Gamma \left({\frac {n}{2}}\right)}}n^{\frac {n}{2}}2^{\frac {n-1}{2}}n^{-{\frac {n+1}{2}}}\Gamma \left({\frac {n+1}{2}}\right)\left(1+{\frac {t^{2}}{n}}\right)^{-{\frac {1}{2}}(n+1)}={\frac {\Gamma [(n+1)/2]}{{\sqrt {n\pi }}\Gamma (n/2)}}\left(1+{\frac {t^{2}}{n}}\right)^{-{\frac {1}{2}}(n+1)} $$
+
+\end{document}

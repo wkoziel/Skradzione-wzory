@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[MeX,plmath]{polski} 
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+\title{Transformacja Laplace'a}
+\maketitle
+\section*{Definicja podstawowa}
+Jednostronną transformatą Laplace’a funkcji $ \mathbb{R} \ni t \mapsto f(t) \in \mathbb{R} $ nazywamy następującą funkcję \( \mathbb{C} \ni s \mapsto F(s) \in \mathbb{C} \)
+$$ F(s) = \left\{\mathcal{L} f\right\}(s) = \int\limits_0^\infty e^{-st} f(t)\, dt. $$
+często zapisywaną, zwłaszcza w środowisku inżynierskim, w następującej formie: 
+\[ F(s) = \mathcal{L} \left\{f(t)\right\} = \int\limits_0^\infty e^{-st} f(t)\, dt. \]
+
+Należy zwrócić uwagę na rozróżnienie pomiędzy pojęciem transformaty a transformacji Laplace’a. Zgodnie z powyższą definicją transformacja Laplace’a jest przekształceniem zbioru funkcji, dla których całka Laplace’a jest zbieżna w zbiór funkcji zespolonych zmiennej zespolonej. Natomiast transformata Laplace’a jest jedynie obrazem pewnej funkcji f(t) przez transformację Laplace’a.
+
+Matematykiem, który zdefiniował transformację Laplace’a i od którego nazwiska wzięła ona nazwę był Pierre Simon de Laplace. 
+
+\section*{Własności}
+\begin{itemize}
+    \item liniowość
+    
+    \begin{displaymath}
+    \mathcal{L}\left\{a f(t) + b g(t) \right\}= a \mathcal{L}\left\{ f(t) \right\} + b \mathcal{L}\left\{ g(t) \right\}
+    \end{displaymath}
+
+    
+    \item pochodna transformaty
+    
+    \begin{equation*}
+         F^{(n)}(s)=(-1)^{n}{\mathcal {L}}\{t^{n}f(t)\}
+    \end{equation*}
+    
+    \item transformata pochodnej
+    
+    \begin{gather*}
+    {\mathcal {L}}\{f'\}=s{\mathcal {L}}\{f\}-f(0^{+})
+    \end{gather*}
+    $$ \mathcal{L}\{f''\} = s^2 \mathcal{L}\{f\} - s f(0^+) - f'(0^+) $$
+    
+    \item transformata całki
+    
+    \begin{eqnarray*}
+    \mathcal{L}\left\{ \frac{f(t)}{t} \right\} = \int\limits_s^\infty F(\sigma)\, d\sigma
+    \end{eqnarray*}
+    
+    \item splot jednostronny
+    
+    \begin{multline*}
+        {\mathcal {L}}\left\{\int \limits _{0}^{t}f(u)\cdot g(t-u)\,du\right\}=\\{\mathcal {L}}\{f*g\}={\mathcal {L}}\{f\}{\mathcal {L}}\{g\}
+    \end{multline*}
+\end{itemize}
+
+\end{document}

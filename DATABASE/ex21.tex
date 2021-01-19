@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[MeX,plmath]{polski} 
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+\title{Równanie różniczkowe Poissona}
+\maketitle
+
+\section*{Wprowadzenie}
+Równanie różniczkowe Poissona – niejednorodne równanie różniczkowe cząstkowe liniowe drugiego rzędu typu eliptycznego.
+
+Równanie to zapisać można w postaci: 
+\[ \nabla^{2}u=f \]
+lub inaczej
+$$ \triangle u = f $$
+
+Funkcję f zmiennych przestrzennych traktuje się jako znaną.
+
+Równanie można również zapisać explicite dla przestrzeni o zadanym wymiarze.
+
+Dla przestrzeni trójwymiarowej przyjmuje ono postać równania różniczkowego cząstkowego: 
+\begin{displaymath}
+{\frac {\partial ^{2}}{\partial x^{2}}}u(x,y,z)+{\frac {\partial ^{2}}{\partial y^{2}}}u(x,y,z)+{\frac {\partial ^{2}}{\partial z^{2}}}u(x,y,z)=f(x,y,z)
+\end{displaymath}
+a dla dwuwymiarowej:
+\begin{equation*}
+{\frac {\partial ^{2}}{\partial x^{2}}}u(x,y)+{\frac {\partial ^{2}}{\partial y^{2}}}u(x,y)=f(x,y)
+\end{equation*}
+
+W przypadku jednowymiarowym równanie Poissona redukuje się do równania różniczkowego zwyczajnego: 
+$$ u''(x)=f(x) $$
+
+W przypadku jednorodnym, tj. jeśli $ f\equiv 0 $, to mamy do czynienia z przypadkiem szczególnym znanym pod nazwą równania różniczkowego Laplace’a. 
+
+Równanie Poissona opisuje wiele procesów zachodzących w przyrodzie, np. rozkład pola prędkości cieczy wypływającej ze źródła, potencjał pola grawitacyjnego w obecności źródeł, potencjał pola elektrostatycznego w obecności ładunków, temperaturę wewnątrz ciała przy stałym dopływie ciepła.
+
+Nazwa równania pochodzi od nazwiska Simeona Denisa Poissona, który sformułował je na początku XIX wieku i przeprowadził analizę jego rozwiązań. 
+
+\section*{Rozwiązania i funkcje Greena}
+Równanie różniczkowe Poissona z dołączonymi do niego warunkami brzegowymi tworzy eliptyczne zagadnienie brzegowe. Zagadnienie to posiada rozwiązania regularne, o ile warunki brzegowe mają postać ciągłą. 
+\begin{gather*}
+u(x)=\int _{\partial U}g(y){\frac {\partial G}{\partial n}}(x,y)dS(x,y)+\int _{U}f(y)G(x,y)dy
+\end{gather*}
+gdzie G jest funkcją Greena obszaru (o ile dla danego obszaru taka funkcja istnieje). 
+
+Funkcją Greena półprzestrzeni \begin{math} \mathbb {R} _{+}^{n}=\{x=(x_{1},\dots ,x_{n}):x_{n}>0\} \end{math} jest 
+\[ G(x,y)=\Gamma (y-x)-\Gamma (y-{\bar {x}}) \]
+
+Funkcją Greena (hiper)kuli jest
+$$ G(x,y)=\Gamma (y-x)-\Gamma (|x|(y-{\tilde {x}})) $$
+
+\end{document}

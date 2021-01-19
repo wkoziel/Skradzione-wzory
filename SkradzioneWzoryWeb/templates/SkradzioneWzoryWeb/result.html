@@ -3,7 +3,7 @@
     <div class='results'>
     {% if similarity %}
         {% for file, formulas, similarity in math%}
-            <p> Zadany plik jest podobny do pliku {{ file }} w {{ similarity }}%. </p>
+            <p> Wzory w zadanym pliku są w {{ similarity }}% podobne do pliku {{ file }}. </p>
             <table class='comparison'>
                 <tr>
                     <th>Wzór porównywany</th>

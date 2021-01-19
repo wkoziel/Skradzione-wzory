@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+\title{Metoda wariacyjna}
+\maketitle
+
+\section{Metoda wariacyjna}
+W porównaniu z rachunkiem zaburzeń, metoda wariacyjna ma pewną przewagę – może ona być użyta praktycznie do dowolnego układu, nie trzeba na nią nakładać żadnych dodatkowych ograniczeń. Równanie Schrödingera przedstawia się następująco: 
+$${ {\hat {H}}\psi _{n}(r)=E_{n}\psi _{n}(r).}$$
+
+Nie można go rozwiązać ściśle, jednak można znaleźć jego przybliżone funkcje i wartości własne. W stanie podstawowym energię można oznaczyć jako E 0 , czyli:
+$${ E_{0}<E_{n}~(n>0).}$$
+
+Można teraz założyć, że istnieje pewna funkcja φ  w tej samej przestrzeni co ψ n  i za jej pomocą można zdefiniować parametr ϵ :
+$${ \epsilon ={\frac {\int \varphi ^{*}{\hat {H}}\varphi d\tau }{\int \varphi ^{*}\varphi d\tau }}.}$$
+
+Ponieważ funkcje ψ n tworzą układ zupełny funkcji ortonormalnych, funkcję φ  można przedstawić w postaci szeregu:
+
+$${ \varphi =\sum \limits _{n}c_{n}^{*}\psi _{n}.}$$
+
+Jeżeli funkcja φ jest także znormalizowana, to powyższe równania można przedstawić w postaci: 
+$${ \sum \limits _{n}c_{n}^{*}c_{n}=1,}$$
+
+a zatem parametr ϵ będzie miał postać: 
+$${ \epsilon =\sum \limits _{n}c_{n}^{*}c_{n}E_{n}.}$$
+
+Jeśli od obu stron równania odjąć wartość E otrzyma się: 
+$${ \epsilon -E_{0}=\sum \limits _{n}c_{n}^{*}c_{n}(E_{n}-E_{0}).}$$
+
+Wobec zawsze dodatniej prawej strony równania (iloczyn c n ∗ oraz różnica energii są zawsze dodatnie), lewa strona równania także jest dodatnia. Skoro:
+$${ \epsilon -E_{0}\geq 0,}$$
+to: 
+$${ \epsilon \geq E_{0}.}$$
+Wynik ten w połączeniu ze wzorem jest podstawą metody wariacyjnej. 
+$${ \varphi =\varphi (a_{1},a_{2},\dots ,a_{k};r_{1},r_{2},\dots ,r_{n}).}$$
+\end{document}

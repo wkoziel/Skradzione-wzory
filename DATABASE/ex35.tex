@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[MeX,plmath]{polski} 
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+\title{Twierdzenie Cauchy’ego (rachunek różniczkowy)}
+\maketitle
+
+\section*{Wstęp}
+Twierdzenie Cauchy’ego – twierdzenie teorii grup, mówi ono, że jeśli G jest grupą skończoną i p jest liczbą pierwszą, będącą dzielnikiem rzędu grupy G (liczby elementów grupy G), to w G istnieje element rzędu p. Oznacza to, że istnieje \(x\in G\) taki, że dla najmniejszego niezerowego zachodzi $x^p = e$, gdzie e jest elementem neutralnym.
+
+Powyższe twierdzenie związane jest z twierdzeniem Lagrange’a, które mówi, że rząd dowolnej skończonej podgrupy grupy G dzieli rząd grupy G. Z twierdzenia Cauchy’ego wynika, że dla dowolnej liczby pierwszej p będącej dzielnikiem rzędu G, istnieje podgrupa grupy której rzędem jest p i jest to grupa cykliczna.
+
+Twierdzenie Cauchy’ego jest uogólnione przez pierwsze twierdzenie Sylowa, które zakłada, że jeśli p jest liczbą pierwszą, a p do n jest dzielnikiem rzędu grupy G, to G ma podgrupę rzędu p do n.
+
+
+\section*{Twierdzenie}
+
+Jeżeli dane funkcje f i g są: \\
+- ciągłe w przedziale domkniętym [a,b], \\
+- różniczkowalne w przedziale (a, b),
+
+to istnieje punkt c należący do przedziału (a,b) taki, że: 
+
+\begin{equation}
+	g'(c)\cdot \left[f(b)-f(a)\right]=f'(c)\cdot \left[g(b)-g(a)\right]
+\end{equation}
+
+
+
+\section*{Dowód}
+
+Nasza grupa cykliczna działa na zbiór 
+
+\begin{equation*}
+	X=\{(x_{1},\dots ,x_{p})\in G^{p}:x_{1}x_{2}\ldots x_{p}=e\}
+\end{equation*} 
+
+skończonych ciągów z G o długości których iloczyn daje element neutralny. Zbiór tych p elementów jest jednoznacznie określony przez wszystkie jego składniki z wyjątkiem ostatniego, ostatni element musi być odwrotnością iloczynu poprzednich elementów.
+
+Zdefiniujmy h: [a,b] → R
+
+\begin{equation*}
+	h(x)=(f(b)-f(a))g(x)-(g(b)-g(a))f(x)
+\end{equation*}
+
+Zauważmy, że h jest różniczkowalna na (a,b) oraz h(a)=h(b), więc na mocy twierdzenia Rolle’a istnieje c należące do przedziału (a,b) takie, że h'(c)=0. Ponadto 
+
+\begin{equation}
+	0=h'(c)=(f(b)-f(a))g'(c)-(g(b)-g(a))f'(c)
+\end{equation}
+
+co kończy dowód.
+
+\section*{Wniosek}
+Jeżeli funkcje f i g są:
+
+- ciągłe w przedziale domkniętym [a,b], różniczkowalne w przedziale (a,b) oraz dodatkowo $g'(x)\not =0$ dla \(x\in (a,b)\),
+
+to istnieje taki punkt $c\in (a,b)$, że: 
+
+\begin{displaymath}
+	{\frac {f(b)-f(a)}{g(b)-g(a)}}={\frac {f'(c)}{g'(c)}} 
+\end{displaymath}
+
+\section*{Zastosowania}
+Natychmiastową konsekwencją twierdzenia Cauchy’ego jest charakteryzacja p-grup skończonych, gdzie p jest liczbą pierwszą. W szczególności, skończona grupa G jest p-grupą (czyli wszystkie jej elementy mają rząd p do k dla dowolnej liczby naturalnej k) wtedy i tylko wtedy, gdy G ma rząd p do n dla dowolnej liczby naturalnej n. Możemy skorzystać z przypadku abelowego twierdzenia Cauchy’ego w dowodzie indukcyjnym pierwszego twierdzenia Sylowa podobnie jak w pierwszym dowodzie powyżej, chociaż istnieją dowody, w których unikamy sprawdzania osobno specjalnego przypadku.
+
+
+
+
+\end{document}

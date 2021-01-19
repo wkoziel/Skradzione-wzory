@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[MeX,plmath]{polski} 
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+\title{Twierdzenie Stone’a-Weierstrassa}
+\maketitle
+
+\section*{Wprowadzenie}
+Twierdzenie Weierstrassa – twierdzenie mówiące, że każdą funkcję ciągłą o wartościach rzeczywistych na przedziale domkniętym [a,b] można przybliżyć jednostajnie z dowolną dokładnością wielomianami. Twierdzenie to zostało znacznie uogólnione przez amerykańskiego matematyka Stone’a i w tej ogólnej postaci jest ono dzisiaj znane jako twierdzenie Stone’a-Weierstrassa.  
+
+\section*{Historia}
+
+W 1885, niemiecki matematyk Karl Weierstraß udowodnił że każda funkcja ciągła z odcinka domkniętego w liczby rzeczywiste R jest granicą jednostajną wielomianów o współczynnikach rzeczywistych. Nie znaczy to jednak, że wielomianami można przybliżyć dowolną funkcję na całej jej dziedzinie. Poza odcinkiem na którym przybliżenie będzie całkiem niezłe, wielomian może zachowywać się katastrofalnie, niezależnie od stopnia. Np. funkcji trygonometrycznych, funkcji wykładniczej, logarytmu itd., nie da się sensownie przybliżyć (na całej dziedzinie) wielomianami niezależnie od stopnia.
+
+W 1937, amerykański matematyk Marshall Harvey Stone uogólnił to twierdzenie a dziesięć lat później znacznie uprościł on dowód. Współcześnie, ogólna forma tego twierdzenia (udowodniona przez Stone’a) jest znana jako twierdzenie Stone’a-Weierstrassa. 
+
+\section*{Definicje}
+Niech $(X,\tau)$ będzie przestrzenią topologiczną.
+
+- C(X) jest zbiorem wszystkich funkcji ciągłych z X w R. Zbiór ten jest wyposażony w strukturę pierścienia przez określenie operacji +,* tak, że
+
+\begin{displaymath}
+	(f+g)(x)=f(x)+g(x)
+\end{displaymath}
+
+oraz 
+
+\begin{equation*}
+	(f\cdot g)(x)=f(x)\cdot g(x)
+\end{equation*}
+
+(dla f,g należącego do C(X) oraz x należącego do X). \newline
+
+- Powiemy, że rodzina funkcji \({\mathcal {R}}\subseteq {\mathcal {C}}(X)\) rozdziela punkty jeśli dla każdych dwóch różnych punktów $x,y\in X$ można znaleźć funkcję \(f\in {\mathcal {R}}\) taką, że $f(x)\neq f(y)$.
+
+- Topologia zbieżności jednostajnej na C(X) jest zadana przez metrykę d taką, że
+
+\[d(f,g)=\sup {\big \{}\min(1,|f(x)-g(x)|):x\in X{\big \}},\;f,g\in {\mathcal {C}}(X)\]
+
+\section*{Twierdzenie}
+
+Jeżeli:
+    (a) X jest przestrzenią zwartą,
+    (b) ${\mathcal {R}}\subseteq {\mathcal {C}}(X)$ jest podpierścieniem zawierającym wszystkie funkcje stałe,
+    (c) zbiór R jest domknięty w topologii zbieżności jednostajnej,
+    (d) R rozdziela punkty.
+
+Wówczas
+
+\begin{equation}
+	{\mathcal {R}}={\mathcal {C}}(X)
+\end{equation}
+
+Tak więc, przy warunkach (a) i (b) sformułowanych powyżej,
+R jest gęstym podzbiorem C(X) (w topologii zbieżności jednostajnej) wtedy i tylko wtedy, gdy R rozdziela punkty.
+
+
+\end{document}
