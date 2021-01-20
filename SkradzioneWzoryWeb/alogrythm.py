@@ -120,7 +120,7 @@ def compare_hashes(loaded_file_data):
 
                 match_data.append(tmp_match_data[index])
 
-        is_enaugh = len(loaded_file_data) // 2
+        is_enaugh = len(loaded_file_data) * 0.7
         if match_data and matches > is_enaugh:
             similarity = int(matches / len(loaded_file_data) * 100)
             results.append([file, match_data, similarity])
