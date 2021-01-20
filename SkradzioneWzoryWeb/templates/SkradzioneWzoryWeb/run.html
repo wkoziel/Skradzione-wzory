@@ -1,6 +1,7 @@
 {% extends 'SkradzioneWzoryWeb/main.html'%}
 {% block content %}
 
+
 <div class="run-program">
     <h2>Wybierz plik, który chcesz sprawdzić</h2>
 
@@ -17,5 +18,13 @@
     {% if text %}
         <p class='info'>{{ text }}</p>
     {% endif %}
+</div>
+<div class="waiting">
+    <div class="lds-heart"><div></div></div>
+<div class="info-for-waiting">Dziękujemy za to,
+    że chcesz skorzystać z naszego systemu do detekcji plagiatów w tekstach matematycznych.
+    W celu sprawdzenia oryginalności pracy wybierz odpowiednik plik .tex z dysku i zatwierdź swój wybór.
+    Plik zostanie przeskanowany specjalnymi algorytmami porównywującymi, dlatego sprawdzanie może potrwać kilkadziesiąt sekund.
+</div><div class="lds-heart"><div></div></div>
 </div>
 {% endblock %}
