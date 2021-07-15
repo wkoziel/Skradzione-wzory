@@ -54,6 +54,7 @@ Project is: _complete_
 Room for Improvement:
 - Application interactivity
 - Application performance
+- Responsiveness
 
 To do:
 - Database enlargement
